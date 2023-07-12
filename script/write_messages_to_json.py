@@ -8,25 +8,22 @@ from doc.exts.pylint_messages import (
 
 from pylint.lint import PyLinter
 
+MESSAGES_PATH = Path("messages.json")
 if __name__ == "__main__":
     linter = PyLinter()
     _register_all_checkers_and_extensions(linter)
     messages, old_messages = _get_all_messages(linter)
 
-    simple_messages = [
-        {
-            category: [
-                {
-                    message.id: {
-                        "name": message.name,
-                        "message": message.definition.msg,
-                        "description": message.definition.description,
-                    }
-                }
-                for message in values
-            ]
+    simple_messages = {
+        category: {
+            message.id: {
+                "name": message.name,
+                "message": message.definition.msg,
+                "description": message.definition.description,
+            }
+            for message in values
         }
         for category, values in messages.items()
-    ]
-    with open(Path("messages.json"), mode="w", encoding="utf-8") as message_dump:
+    }
+    with open(MESSAGES_PATH, mode="w", encoding="utf-8") as message_dump:
         ujson.dump(simple_messages, message_dump, indent=4)
