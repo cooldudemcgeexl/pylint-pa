@@ -9,6 +9,7 @@
 /pylint.egg-info/
 .tox
 *.sw[a-z]
+.venv
 # Can't use | operator in .gitignore, see
 # https://unix.stackexchange.com/a/31806/189111
 doc/user_guide/messages/convention/
