@@ -225,24 +225,24 @@ def _make_graph(
 
 MSGS: dict[str, MessageDefinitionTuple] = {
     "E0401": (
-        "Unable to import %s",
+        "Oh, look at that! Pylint seems to be having a bit of trouble importing a module. How unfortunate for it!",
         "import-error",
         "Used when pylint has been unable to import a module.",
         {"old_names": [("F0401", "old-import-error")]},
     ),
     "E0402": (
-        "Attempted relative import beyond top-level package",
+        "Oh, look who's trying to access too many levels in the current package with their *fancy* relative import! Maybe next time, try not to go overboard with your package exploration, unless you want to have a little chat with pylint. Just a suggestion, of course.",
         "relative-beyond-top-level",
         "Used when a relative import tries to access too many levels "
         "in the current package.",
     ),
     "R0401": (
-        "Cyclic import (%s)",
+        "Oh, look what we have here! Seems like someone's gone and created a nice little cyclic import between two or more modules. How thoughtful!",
         "cyclic-import",
         "Used when a cyclic import between two or more modules is detected.",
     ),
     "R0402": (
-        "Use 'from %s import %s' instead",
+        "Oh, how impressive! Looks like someone decided to import a submodule of a package and alias it with the same name. How clever! Just so you know, it's recommended to use the 'from %s import %s' syntax instead. But hey, who am I to tell you how to write your code? Good luck with your unconventional approach!",
         "consider-using-from-import",
         "Emitted when a submodule of a package is imported and "
         "aliased with the same name, "
@@ -250,44 +250,44 @@ MSGS: dict[str, MessageDefinitionTuple] = {
         "``from concurrent import futures``.",
     ),
     "W0401": (
-        "Wildcard import %s",
+        "Oh, how delightful! Looks like we have a little 'from module import *' situation going on here.",
         "wildcard-import",
         "Used when `from module import *` is detected.",
     ),
     "W0404": (
-        "Reimport %r (imported line %s)",
+        "How delightful it is that this module has been imported not just once, but multiple times! Quite the efficient use of resources, I must say.",
         "reimported",
         "Used when a module is imported more than once.",
     ),
     "W0406": (
-        "Module import itself",
+        "Oh, how clever! This module seems to think highly of itself, importing none other than... itself. How delightfully redundant.",
         "import-self",
         "Used when a module is importing itself.",
     ),
     "W0407": (
-        "Prefer importing %r instead of %r",
+        "Oh, look at this fancy code importing a module that apparently has a 'preferred replacement' module. I guess someone thinks they know better than everyone else. How cute.",
         "preferred-module",
         "Used when a module imported has a preferred replacement module.",
     ),
     "W0410": (
-        "__future__ import is not the first non docstring statement",
+        "Oh, isn't it just lovely that Python 2.5 and later force us to include the __future__ import as the very first non-docstring statement in the module? Absolutely delightful.",
         "misplaced-future",
         "Python 2.5 and greater require __future__ import to be the "
         "first non docstring statement in the module.",
     ),
     "C0410": (
-        "Multiple imports on one line (%s)",
+        "Oh, look who's feeling fancy with their multiple module imports! How unique and edgy of you to go against the norm. Maybe next time you can try to keep it simple like the rest of us. Just a friendly suggestion.",
         "multiple-imports",
         "Used when import statement importing multiple modules is detected.",
     ),
     "C0411": (
-        "%s should be placed before %s",
+        "Oh, I see someone has decided to completely ignore the PEP8 import order guideline. I guess the concept of placing standard imports before third-party libraries and local imports is just too much to handle for some people. But hey, who needs consistency and organization anyway?",
         "wrong-import-order",
         "Used when PEP8 import order is not respected (standard imports "
         "first, then third-party libraries, then local imports).",
     ),
     "C0412": (
-        "Imports from package %s are not grouped",
+        "Oh, how delightful! Another instance where imports were not properly grouped by packages. How curious it is that some folks just can't seem to adhere to such a simple guideline. But not to fret, dear coder, I'm sure you have your reasons for disregarding this charming little convention. Just reminding you, ever so politely, that it might be beneficial to organize your imports in a more elegant and logical manner by grouping them by packages. Such a trivial matter, really. But ah, the joys of conformity and consistency!",
         "ungrouped-imports",
         "Used when imports are not grouped by packages.",
     ),
@@ -297,19 +297,19 @@ MSGS: dict[str, MessageDefinitionTuple] = {
         "Used when code and imports are mixed.",
     ),
     "C0414": (
-        "Import alias does not rename original package",
+        "Oh, how original! Using an import alias that is the exact same as the original package. I see you really put your thinking cap on for this one. It's not like we have established conventions for a reason, like using import numpy as np instead of import numpy as numpy. But hey, who needs clarity and readability, right? ",
         "useless-import-alias",
         "Used when an import alias is same as original package, "
         "e.g., using import numpy as numpy instead of import numpy as np.",
     ),
     "C0415": (
-        "Import outside toplevel (%s)",
+        "It's adorable how you put your import statement anywhere other than the module toplevel. But please, do us all a favor and move it to the top of the file. Thanks!",
         "import-outside-toplevel",
         "Used when an import statement is used anywhere other than the module "
         "toplevel. Move this import to the top of the file.",
     ),
     "W0416": (
-        "Shadowed %r (imported line %s)",
+        "Oh, how clever! You've decided to give your module the same name as another import and create unnecessary confusion. Very impressive indeed.",
         "shadowed-import",
         "Used when a module is aliased with a name that shadows another import.",
     ),

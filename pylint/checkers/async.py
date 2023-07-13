@@ -24,14 +24,14 @@ class AsyncChecker(checkers.BaseChecker):
     name = "async"
     msgs = {
         "E1700": (
-            "Yield inside async function",
+            "Oh, look what we have here! It seems like someone thought it would be a great idea to use a `yield` or `yield from` statement inside an async function. How original. Can't wait to deal with the consequences of that brilliant decision.",
             "yield-inside-async-function",
             "Used when an `yield` or `yield from` statement is "
             "found inside an async function.",
             {"minversion": (3, 5)},
         ),
         "E1701": (
-            "Async context manager '%s' doesn't implement __aenter__ and __aexit__.",
+            "Oh, I see we thought it would be funny to use an async context manager with an object that clearly doesn't have a clue about the async context management protocol. How clever of us!",
             "not-async-context-manager",
             "Used when an async context manager is used with an object "
             "that does not implement the async context management protocol.",

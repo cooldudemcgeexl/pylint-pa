@@ -24,7 +24,7 @@ if TYPE_CHECKING:
 
 MSGS: dict[str, MessageDefinitionTuple] = {
     "E1003": (
-        "Bad first argument %r given to super()",
+        "Oh, how fascinating that someone decided to use a different class as the first argument for the super builtin. Clearly, they must have their reasons, although I can't quite understand what they might be. But no worries, I'm sure it'll all work out just fine.",
         "bad-super-call",
         "Used when another argument than the current class is given as "
         "first argument of the super builtin.",

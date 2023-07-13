@@ -31,13 +31,13 @@ class UnsupportedVersionChecker(BaseChecker):
     name = "unsupported_version"
     msgs = {
         "W2601": (
-            "F-strings are not supported by all versions included in the py-version setting",
+            "Oh, look what we have here! The precious user has set a py-version lower than 3.6, and now pylint is encountering an f-string. How delightful!",
             "using-f-string-in-unsupported-version",
             "Used when the py-version set by the user is lower than 3.6 and pylint encounters "
             "an f-string.",
         ),
         "W2602": (
-            "typing.final is not supported by all versions included in the py-version setting",
+            "Oh, how delightful! It seems that the user has set a py-version lower than 3.8, and now we have encountered a 'typing.final' decorator. How utterly fascinating!",
             "using-final-decorator-in-unsupported-version",
             "Used when the py-version set by the user is lower than 3.8 and pylint encounters "
             "a ``typing.final`` decorator.",

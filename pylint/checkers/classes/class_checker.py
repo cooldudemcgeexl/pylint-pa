@@ -497,44 +497,44 @@ def _has_same_layout_slots(
 
 MSGS: dict[str, MessageDefinitionTuple] = {
     "F0202": (
-        "Unable to check methods signature (%s / %s)",
+        "Well, it seems that Pylint is having a bit of a tough time trying to figure out if the methods' signatures are compatible. Oh, what a surprise! If you're scratching your head in confusion, do us a favor and be sure to report this kind of nonsense. Thanks!",
         "method-check-failed",
         "Used when Pylint has been unable to check methods signature "
         "compatibility for an unexpected reason. Please report this kind "
         "if you don't make sense of it.",
     ),
     "E0202": (
-        "An attribute defined in %s line %s hides this method",
+        "Oh, how lovely! Seems like this class has decided to define a method that is conveniently hidden by an instance attribute from its ancestor class or possibly overridden by some client code. Such a brilliant move!",
         "method-hidden",
         "Used when a class defines a method which is hidden by an "
         "instance attribute from an ancestor class or set by some "
         "client code.",
     ),
     "E0203": (
-        "Access to member %r before its definition line %s",
+        "Oh, how impressive! Looks like someone just couldn't resist accessing an instance member before it had the honor of being assigned. Bravo!",
         "access-member-before-definition",
         "Used when an instance member is accessed before it's actually assigned.",
     ),
     "W0201": (
-        "Attribute %r defined outside __init__",
+        "Oh, I see you've decided to define an instance attribute outside of the __init__ method. How bold and unconventional of you! I mean, who needs to follow the standard and logical approach, right? Just do things your own way, why not?",
         "attribute-defined-outside-init",
         "Used when an instance attribute is defined outside the __init__ method.",
     ),
     "W0212": (
-        "Access to a protected member %s of a client class",  # E0214
+        "Oh, how delightful! Look at how we're accessing a protected member outside its class or a descendant. How audacious of us!",  # E0214
         "protected-access",
         "Used when a protected member (i.e. class member with a name "
         "beginning with an underscore) is access outside the class or a "
         "descendant of the class where it's defined.",
     ),
     "W0213": (
-        "Flag member %(overlap)s shares bit positions with %(sources)s",
+        "Oh, wonderful! Looks like someone didn't bother checking before declaring multiple integer values within an enum.IntFlag class that share a common bit position. How thoughtful!",
         "implicit-flag-alias",
         "Used when multiple integer values declared within an enum.IntFlag "
         "class share a common bit position.",
     ),
     "E0211": (
-        "Method %r has no argument",
+        "Oh, it seems that someone forgot to define an argument in a method that obviously requires the bound instance as the first argument. How silly of them.",
         "no-method-argument",
         "Used when a method which should have the bound instance as "
         "first argument has no argument defined.",
@@ -547,7 +547,7 @@ MSGS: dict[str, MessageDefinitionTuple] = {
         "a so common convention that you shouldn't break it!",
     ),
     "C0202": (
-        "Class method %s should have %s as first argument",
+        "Oh, I see you've decided to ignore the recommended convention of naming your first argument in a class method as 'cls'. How creative of you to choose a different name! It must be so delightful for others to easily differentiate your class methods from regular instance methods. Such originality!",
         "bad-classmethod-argument",
         "Used when a class method has a first argument named differently "
         "than the value specified in valid-classmethod-first-arg option "
@@ -555,7 +555,7 @@ MSGS: dict[str, MessageDefinitionTuple] = {
         "from regular instance methods.",
     ),
     "C0203": (
-        "Metaclass method %s should have %s as first argument",
+        "Oh, aren't we clever? Looks like someone decided to give a first argument in the metaclass method a name that's different from what's specified in the valid-classmethod-first-arg option. How unique and special! Just a little suggestion, though: maybe it's a good idea to have them named the same so that they stand out as regular instance methods. But hey, who am I to give advice? You do you!",
         "bad-mcs-method-argument",
         "Used when a metaclass method has a first argument named "
         "differently than the value specified in valid-classmethod-first"
@@ -563,7 +563,7 @@ MSGS: dict[str, MessageDefinitionTuple] = {
         "differentiate them from regular instance methods.",
     ),
     "C0204": (
-        "Metaclass class method %s should have %s as first argument",
+        "Oh, I see you have decided to name your first argument in the metaclass class method something other than the recommended 'mcs' specified in the valid-metaclass-classmethod-first-arg option. How innovative of you! But just so you know, it is generally advised to stick to the conventions to easily distinguish metaclass class methods from regular instance methods. Just a friendly heads-up!",
         "bad-mcs-classmethod-argument",
         "Used when a metaclass class method has a first argument named "
         "differently than the value specified in valid-metaclass-"
@@ -571,45 +571,45 @@ MSGS: dict[str, MessageDefinitionTuple] = {
         "easily differentiate them from regular instance methods.",
     ),
     "W0211": (
-        "Static method with %r as first argument",
+        "Oh, look who thinks they're so clever using 'self' or some other fancy value as the first argument in a static method. I bet they must feel really special. Well, newsflash, you're not following the valid-classmethod-first-arg or valid-metaclass-classmethod-first-arg options. So you might want to reconsider your choices there, bud. Just saying.",
         "bad-staticmethod-argument",
         'Used when a static method has "self" or a value specified in '
         "valid-classmethod-first-arg option or "
         "valid-metaclass-classmethod-first-arg option as first argument.",
     ),
     "W0221": (
-        "%s %s %r method",
+        "Oh, look who thinks they know better than the implemented interface or the overridden method! How impressive. Just so you know, your extra arguments with default values are totally being ignored. But hey, it's not like we need them or anything.",
         "arguments-differ",
         "Used when a method has a different number of arguments than in "
         "the implemented interface or in an overridden method. Extra arguments "
         "with default values are ignored.",
     ),
     "W0222": (
-        "Signature differs from %s %r method",
+        "Oh, congratulations! You seem to have made the creative decision to use a method signature that is different from what was specified in the implemented interface or in the overridden method. How innovative of you!",
         "signature-differs",
         "Used when a method signature is different than in the "
         "implemented interface or in an overridden method.",
     ),
     "W0223": (
-        "Method %r is abstract in class %r but is not overridden in child class %r",
+        "Seems like someone forgot to override an abstract method in a concrete class. How typical.",
         "abstract-method",
         "Used when an abstract method (i.e. raise NotImplementedError) is "
         "not overridden in concrete class.",
     ),
     "W0231": (
-        "__init__ method from base class %r is not called",
+        "It seems that someone forgot to call the __init__ method of the ancestor class in their fancy derived class. How thoughtful of them.",
         "super-init-not-called",
         "Used when an ancestor class method has an __init__ method "
         "which is not called by a derived class.",
     ),
     "W0233": (
-        "__init__ method from a non direct base class %r is called",
+        "Oh, isn't it just delightful when someone decides to call an __init__ method on a class that has absolutely no business being a direct ancestor of the analyzed class? Absolutely thrilling.",
         "non-parent-init-called",
         "Used when an __init__ method is called on a class which is not "
         "in the direct ancestors for the analysed class.",
     ),
     "W0246": (
-        "Useless parent or super() delegation in method %r",
+        "Congratulations on another set of 'really useful' overridden methods, where you seemingly put all your effort into making them as pointless as possible. It's truly impressive how you managed to rely on the parent or super() delegation to do the exact same thing as another method from the MRO, just so you could waste everyone's time. Keep up the amazing work!",
         "useless-parent-delegation",
         "Used whenever we can detect that an overridden method is useless, "
         "relying on parent or super() delegation to do the same thing as another method "
@@ -617,82 +617,82 @@ MSGS: dict[str, MessageDefinitionTuple] = {
         {"old_names": [("W0235", "useless-super-delegation")]},
     ),
     "W0236": (
-        "Method %r was expected to be %r, found it instead as %r",
+        "Oh, look! It seems someone has so cleverly overridden a method in a way that completely disregards its base class. How genius! Now, get ready for some delightful potential bugs that will surely make runtime such a thrilling experience!",
         "invalid-overridden-method",
         "Used when we detect that a method was overridden in a way "
         "that does not match its base class "
         "which could result in potential bugs at runtime.",
     ),
     "W0237": (
-        "%s %s %r method",
+        "Oh, look who thinks they know better than the implemented interface or the overridden method! How impressive. Just so you know, your extra arguments with default values are totally being ignored. But hey, it's not like we need them or anything.",
         "arguments-renamed",
         "Used when a method parameter has a different name than in "
         "the implemented interface or in an overridden method.",
     ),
     "W0238": (
-        "Unused private member `%s.%s`",
+        "Oh, look at that private member being defined but never used. How productive.",
         "unused-private-member",
         "Emitted when a private member of a class is defined but not used.",
     ),
     "W0239": (
-        "Method %r overrides a method decorated with typing.final which is defined in class %r",
+        "Oh look, someone decided to override a method that was clearly decorated with typing.final. How dare they defy the sacred rules of code!",
         "overridden-final-method",
         "Used when a method decorated with typing.final has been overridden.",
     ),
     "W0240": (
-        "Class %r is a subclass of a class decorated with typing.final: %r",
+        "Oh, look at that! Seems like someone decided to subclass a class that was cleverly decorated with typing.final. How innovative.",
         "subclassed-final-class",
         "Used when a class decorated with typing.final has been subclassed.",
     ),
     "W0244": (
-        "Redefined slots %r in subclass",
+        "Oh, so we're just casually re-defining slots in subclasses now, are we?",
         "redefined-slots-in-subclass",
         "Used when a slot is re-defined in a subclass.",
     ),
     "W0245": (
-        "Super call without brackets",
+        "Oh, how delightful! Another instance of a call to super without brackets. Clearly, this 'non-call' approach is working wonders and achieving nothing as expected. So impressive, really.",
         "super-without-brackets",
         "Used when a call to super does not have brackets and thus is not an actual "
         "call and does not work as expected.",
     ),
     "E0236": (
-        "Invalid object %r in __slots__, must contain only non empty strings",
+        "Oh, it seems we have the privilege of handling an object in __slots__ that is completely invalid and not even a string. How interesting!",
         "invalid-slots-object",
         "Used when an invalid (non-string) object occurs in __slots__.",
     ),
     "E0237": (
-        "Assigning to attribute %r not defined in class slots",
+        "Oh, how original! You've decided to assign to an attribute that was not defined in the class slots. How refreshing!",
         "assigning-non-slot",
         "Used when assigning to an attribute not defined in the class slots.",
     ),
     "E0238": (
-        "Invalid __slots__ object",
+        "Seems like someone didn't bother to read the rule book. Apparently, a class with an invalid __slots__ was found. Sigh. Just a friendly reminder, only a string, an iterable, or a sequence is permitted. But, hey, who am I to judge?",
         "invalid-slots",
         "Used when an invalid __slots__ is found in class. "
         "Only a string, an iterable or a sequence is permitted.",
     ),
     "E0239": (
-        "Inheriting %r, which is not a class.",
+        "Oh, how interesting! It appears that someone has decided to have their class inherit from something that isn't even a class. Quite the clever choice, wouldn't you say?",
         "inherit-non-class",
         "Used when a class inherits from something which is not a class.",
     ),
     "E0240": (
-        "Inconsistent method resolution order for class %r",
+        "Oh, look who decided to have an inconsistent method resolution order in their class!",
         "inconsistent-mro",
         "Used when a class has an inconsistent method resolution order.",
     ),
     "E0241": (
-        "Duplicate bases for class %r",
+        "Oh, look at you using duplicate base classes in your derived classes! So original. Just a little heads up, though: that's going to raise TypeErrors. But I'm sure you'll figure it out eventually. Good luck!",
         "duplicate-bases",
         "Duplicate use of base classes in derived classes raise TypeErrors.",
     ),
     "E0242": (
-        "Value %r in slots conflicts with class variable",
+        "Oh, looks like someone's little __slots__ value decided to cause some trouble, conflicting with one of our precious class variables, properties, or methods. How delightful.",
         "class-variable-slots-conflict",
         "Used when a value in __slots__ conflicts with a class variable, property or method.",
     ),
     "E0243": (
-        "Invalid assignment to '__class__'. Should be a class definition but got a '%s'",
+        "Ah, it seems we have mistakenly assigned an invalid object to the __class__ property. I must kindly remind you that only a class is permitted in this case. Just thought I'd mention it so we can avoid such unintentional errors in the future.",
         "invalid-class-object",
         "Used when an invalid object is assigned to a __class__ property. "
         "Only a class is permitted.",
@@ -704,28 +704,28 @@ MSGS: dict[str, MessageDefinitionTuple] = {
         "Doing so will raise a TypeError at runtime.",
     ),
     "R0202": (
-        "Consider using a decorator instead of calling classmethod",
+        "Oh how cute, a class method defined without utilizing the decorator syntax. Guess somebody missed the memo on proper coding practices.",
         "no-classmethod-decorator",
         "Used when a class method is defined without using the decorator syntax.",
     ),
     "R0203": (
-        "Consider using a decorator instead of calling staticmethod",
+        "Oh, so I see we decided to define a static method without bothering to use the decorator syntax. How quaint.",
         "no-staticmethod-decorator",
         "Used when a static method is defined without using the decorator syntax.",
     ),
     "C0205": (
-        "Class __slots__ should be a non-string iterable",
+        "Oh, well look at this! Someone decided to use a simple string as a class __slots__ instead of an iterable. How clever! I'm sure that was a deliberate choice and definitely not a mistake at all. Fantastic job!",
         "single-string-used-for-slots",
         "Used when a class __slots__ is a simple string, rather than an iterable.",
     ),
     "R0205": (
-        "Class %r inherits from object, can be safely removed from bases in python3",
+        "Oh, how interesting! Just thought I'd let you know that you've gone ahead and inherited from object, which is actually unnecessary under python3. But hey, feel free to keep it if you want to! Just thought I'd point it out. Have a lovely day!",
         "useless-object-inheritance",
         "Used when a class inherit from object, which under python3 is implicit, "
         "hence can be safely removed from bases.",
     ),
     "R0206": (
-        "Cannot have defined parameters for properties",
+        "Oh, how convenient! We just love it when we stumble upon properties with pointless parameters. Because, you know, who needs to call properties with any extra arguments? It's not like that's a thing, right? Just so useless, really.",
         "property-with-parameters",
         "Used when we detect that a property also has parameters, which are useless, "
         "given that properties cannot be called with additional arguments.",

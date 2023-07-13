@@ -208,19 +208,19 @@ class SpellingChecker(BaseTokenChecker):
     name = "spelling"
     msgs = {
         "C0401": (
-            "Wrong spelling of a word '%s' in a comment:\n%s\n"
+            "Oh, how marvelous! Looks like someone had a little oopsie with their spelling. Time to break out the dictionary and sharpen up those language skills, my friend."
             "%s\nDid you mean: '%s'?",
             "wrong-spelling-in-comment",
             "Used when a word in comment is not spelled correctly.",
         ),
         "C0402": (
-            "Wrong spelling of a word '%s' in a docstring:\n%s\n"
+            "Well, it seems like someone didn't bother to double-check their spelling in the docstring. Quite an impressive display of carelessness, I must say."
             "%s\nDid you mean: '%s'?",
             "wrong-spelling-in-docstring",
             "Used when a word in docstring is not spelled correctly.",
         ),
         "C0403": (
-            "Invalid characters %r in a docstring",
+            "Oh, look at this! Enchant can't even check a single word in the docstring. How impressive.",
             "invalid-characters-in-docstring",
             "Used when a word in docstring cannot be checked by enchant.",
         ),

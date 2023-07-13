@@ -123,7 +123,7 @@ BAD_CHARS = [
         "\0",
         "\\0",
         "E2514",
-        "Mostly end of input for python.",
+        "Oh wow, looks like someone forgot how to properly close their Python script. Must be nice to think the input just magically ends itself.",
     ),
     _BadChar(
         # Zero Width with Space. At the time of writing not accepted by Python.
@@ -132,7 +132,7 @@ BAD_CHARS = [
         "\u200B",  # \n{ZERO WIDTH SPACE}
         "\\u200B",
         "E2515",
-        "Invisible space character could hide real code execution.",
+        "Oh, well isn't this just delightful? It appears that someone has taken the time to play a little game of hide-and-seek with their code execution. How positively charming! Just thought you should know that there seems to be an invisible space character lurking about, ready to cause some mischief. But hey, who needs code that's actually visible and easy to understand, right?",
     ),
 ]
 BAD_ASCII_SEARCH_DICT = {char.unescaped: char for char in BAD_CHARS}
@@ -356,7 +356,7 @@ class UnicodeChecker(checkers.BaseRawFileChecker):
             ),
         ),
         "C2503": (
-            "PEP8 recommends UTF-8 as encoding for Python files",
+            "Oh, look at that. PEP8 ever so kindly 'suggests' using UTF-8 as the default encoding for Python files. I mean, it's not like it's mandatory or anything. Just a friendly little recommendation. If you're interested, you can check out the link here: https://peps.python.org/pep-0008/#source-file-encoding. But hey, who really cares about following best practices, right?",
             "bad-file-encoding",
             (
                 "PEP8 recommends UTF-8 default encoding for Python files. See "

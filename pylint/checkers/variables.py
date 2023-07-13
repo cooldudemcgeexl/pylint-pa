@@ -372,7 +372,7 @@ def _has_locals_call_after_node(stmt: nodes.NodeNG, scope: nodes.FunctionDef) ->
 
 MSGS: dict[str, MessageDefinitionTuple] = {
     "E0601": (
-        "Using variable %r before assignment",
+        "Oh, look who decided to access a local variable before bothering to assign a value to it. Did you really think it would magically have a value without any effort on your part? Just so you know, those assignments in try blocks are conveniently ignored when evaluating except/finally blocks, as if they never happened. And don't even get me started on those pathetic assignments in except blocks that are conveniently forgotten when evaluating statements outside the block, unless the try block has a return statement. But hey, why would anyone expect you to understand such basic concepts?",
         "used-before-assignment",
         "Emitted when a local variable is accessed before its assignment took place. "
         "Assignments in try blocks are assumed not to have occurred when evaluating "
@@ -381,135 +381,135 @@ MSGS: dict[str, MessageDefinitionTuple] = {
         "when the associated try block contains a return statement.",
     ),
     "E0602": (
-        "Undefined variable %r",
+        "Oh, how delightful! It appears that someone has attempted to access an undefined variable. How peculiar indeed!",
         "undefined-variable",
         "Used when an undefined variable is accessed.",
     ),
     "E0603": (
-        "Undefined variable name %r in __all__",
+        "Oh look, another genius move referencing an undefined variable name in __all__. Well done!",
         "undefined-all-variable",
         "Used when an undefined variable name is referenced in __all__.",
     ),
     "E0604": (
-        "Invalid object %r in __all__, must contain only strings",
+        "Oh, well look at that! Seems like someone went ahead and sneaked in an invalid (non-string) object into __all__. How thoughtful!",
         "invalid-all-object",
         "Used when an invalid (non-string) object occurs in __all__.",
     ),
     "E0605": (
-        "Invalid format for __all__, must be tuple or list",
+        "Oh, look! Seems like __all__ has an invalid format. How nice!",
         "invalid-all-format",
         "Used when __all__ has an invalid format.",
     ),
     "E0611": (
-        "No name %r in module %r",
+        "Oh, look who can't find a name in a module!",
         "no-name-in-module",
         "Used when a name cannot be found in a module.",
     ),
     "W0601": (
-        "Global variable %r undefined at the module level",
+        "'Seems like someone decided to define a variable using the 'global' statement, yet conveniently forgot to actually define it in the module scope. Oh well, not my problem!'",
         "global-variable-undefined",
         'Used when a variable is defined through the "global" statement '
         "but the variable is not defined in the module scope.",
     ),
     "W0602": (
-        "Using global for %r but no assignment is done",
+        "Well, it seems that if you happen to modify a variable defined in the global scope within an inner scope, the oh-so-important 'global' keyword is only required in that inner scope if there happens to be some assignment operation going on in there. Just a little something to keep in mind if you care about such trivialities.",
         "global-variable-not-assigned",
         "When a variable defined in the global scope is modified in an inner scope, "
         "the 'global' keyword is required in the inner scope only if there is an "
         "assignment operation done in the inner scope.",
     ),
     "W0603": (
-        "Using the global statement",  # W0121
+        "Oh, well look at you using the 'global' statement to update a global variable. Pylint just loves discouraging that kind of thing. But hey, who says you can't go against the grain and still use it anyway?",  # W0121
         "global-statement",
         'Used when you use the "global" statement to update a global '
         "variable. Pylint discourages its usage. That doesn't mean you cannot "
         "use it!",
     ),
     "W0604": (
-        "Using the global statement at the module level",  # W0103
+        "Oh, well look at you using the 'global' statement to update a global variable. Pylint just loves discouraging that kind of thing. But hey, who says you can't go against the grain and still use it anyway? at the module level",  # W0103
         "global-at-module-level",
         'Used when you use the "global" statement at the module level '
         "since it has no effect.",
     ),
     "W0611": (
-        "Unused %s",
+        "Oh, look who decided to import a module or variable and then completely ignore it. Very impressive.",
         "unused-import",
         "Used when an imported module or variable is not used.",
     ),
     "W0612": (
-        "Unused variable %r",
+        "'Oh, I see we've joyfully defined a variable that won't be receiving any attention. How delightful!'",
         "unused-variable",
         "Used when a variable is defined but not used.",
     ),
     "W0613": (
-        "Unused argument %r",
+        "Oh, congratulations on writing code that includes a completely useless function or method argument. I mean, who needs all those pesky variables anyway, right? Good job, genius.",
         "unused-argument",
         "Used when a function or method argument is not used.",
     ),
     "W0614": (
-        "Unused import(s) %s from wildcard import of %s",
+        "Oh, well, apparently we're just importing a whole bunch of stuff we don't actually need. That's cool, no problem at all.",
         "unused-wildcard-import",
         "Used when an imported module or variable is not used from a "
         "`'from X import *'` style import.",
     ),
     "W0621": (
-        "Redefining name %r from outer scope (line %s)",
+        "Oh, how clever! Your variable's name is so sneaky that it actually hides a name that was defined in an outer scope or except handler. Impressive.",
         "redefined-outer-name",
         "Used when a variable's name hides a name defined in an outer scope or except handler.",
     ),
     "W0622": (
-        "Redefining built-in %r",
+        "Oh, how clever! Looks like someone thought they were being really creative by using a variable or function name that just happens to override a built-in. Good job, genius!",
         "redefined-builtin",
         "Used when a variable or function override a built-in.",
     ),
     "W0631": (
-        "Using possibly undefined loop variable %r",
+        "Oh, how charming! Looks like someone forgot that a loop variable should only be used within the loop it belongs to. How terribly inconvenient!",
         "undefined-loop-variable",
         "Used when a loop variable (i.e. defined by a for loop or "
         "a list comprehension or a generator expression) is used outside "
         "the loop.",
     ),
     "W0632": (
-        "Possible unbalanced tuple unpacking with sequence %s: left side has %d "
+        "Oh, congratulations on your unbalanced tuple unpacking in assignment! Absolutely love how you effortlessly managed to mess up something so simple. Keep up the good work!"
         "label%s, right side has %d value%s",
         "unbalanced-tuple-unpacking",
         "Used when there is an unbalanced tuple unpacking in assignment",
         {"old_names": [("E0632", "old-unbalanced-tuple-unpacking")]},
     ),
     "E0633": (
-        "Attempting to unpack a non-sequence%s",
+        "Oh, well aren't you just a rule breaker? Trying to use something that clearly isn't a sequence in an unpack assignment. How original of you.",
         "unpacking-non-sequence",
         "Used when something which is not a sequence is used in an unpack assignment",
         {"old_names": [("W0633", "old-unpacking-non-sequence")]},
     ),
     "W0640": (
-        "Cell variable %s defined in loop",
+        "Oh, how fascinating! It seems that someone has gone ahead and defined a variable inside a loop, which shall inevitably lead to all closures using the exact same value for this particular variable. Bravo, well done!",
         "cell-var-from-loop",
         "A variable used in a closure is defined in a loop. "
         "This will result in all closures using the same value for "
         "the closed-over variable.",
     ),
     "W0641": (
-        "Possibly unused variable %r",
+        "Oh, look at this variable that might not even be used! How intriguing. I suppose it's because someone might be clever enough to use locals() and decide to either consume it or simply ignore it. But who knows, right?",
         "possibly-unused-variable",
         "Used when a variable is defined but might not be used. "
         "The possibility comes from the fact that locals() might be used, "
         "which could consume or not the said variable",
     ),
     "W0642": (
-        "Invalid assignment to %s in method",
+        "Oh, great job assigning to 'self' or 'cls' in an instance or class method. That's definitely a clever move.",
         "self-cls-assignment",
         "Invalid assignment to self or cls in instance or class method "
         "respectively.",
     ),
     "E0643": (
-        "Invalid index for iterable length",
+        "Oh, how impressive! Looks like someone decided to go beyond the boundaries of an iterable with their index. Quite the rebel, aren't we? Let's just emit this little message to remind them of their little mishap.",
         "potential-index-error",
         "Emitted when an index used on an iterable goes beyond the length of that "
         "iterable.",
     ),
     "W0644": (
-        "Possible unbalanced dict unpacking with %s: "
+        "Oh, how lovely to stumble upon this unbalanced dict unpacking in your assignment or for loop. Quite an interesting choice you've made there, leaving things all lopsided and off-kilter. Surely there must be some method to your madness, but I can't help but wonder if a bit more attention to detail might be in order."
         "left side has %d label%s, right side has %d value%s",
         "unbalanced-dict-unpacking",
         "Used when there is an unbalanced dict unpacking in assignment or for loop",

@@ -3,9 +3,9 @@ requires = ["setuptools~=62.6", "wheel~=0.37.1"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name        = "pylint"
+name        = "pylint-pa"
 license     = {text = "GPL-2.0-or-later"}
-description = "python code static checker"
+description = "python code static checker, but passive-aggressive"
 readme      = "README.rst"
 authors     = [
     {name = "Python Code Quality Authority", email = "code-quality@python.org"}

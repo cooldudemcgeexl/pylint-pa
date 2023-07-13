@@ -25,59 +25,59 @@ MSGS: dict[
     str, MessageDefinitionTuple
 ] = {  # pylint: disable=consider-using-namedtuple-or-dataclass
     "R0901": (
-        "Too many ancestors (%s/%s)",
+        "Oh, looks like someone got a bit carried away with the parent classes here. Maybe it's time to untangle the mess and simplify this class. You know, so that it becomes easier for mere mortals like us to actually use it. Just a suggestion!",
         "too-many-ancestors",
         "Used when class has too many parent classes, try to reduce "
         "this to get a simpler (and so easier to use) class.",
     ),
     "R0902": (
-        "Too many instance attributes (%s/%s)",
+        "Oh, congratulations on creating a class with an overwhelming number of instance attributes! Maybe you should consider reducing them to make it a tad simpler and, you know, actually user-friendly. But hey, no rush, take your sweet time.",
         "too-many-instance-attributes",
         "Used when class has too many instance attributes, try to reduce "
         "this to get a simpler (and so easier to use) class.",
     ),
     "R0903": (
-        "Too few public methods (%s/%s)",
+        "I can't help but notice that this class seems to have an unusually scarce number of public methods. But hey, who am I to question your decision-making? Just make sure it's truly worth it, and not, you know, a colossal waste of time.",
         "too-few-public-methods",
         "Used when class has too few public methods, so be sure it's "
         "really worth it.",
     ),
     "R0904": (
-        "Too many public methods (%s/%s)",
+        "Wow, looks like someone went wild and threw a bunch of public methods into this class! Maybe consider reducing them to make this class less of a headache to use. Just a friendly suggestion, of course.",
         "too-many-public-methods",
         "Used when class has too many public methods, try to reduce "
         "this to get a simpler (and so easier to use) class.",
     ),
     "R0911": (
-        "Too many return statements (%s/%s)",
+        "Well, isn't this just a delightful mess we have here? Seems like someone got a little too carried away with their return statements, making it nearly impossible to understand what the heck is going on. Bravo.",
         "too-many-return-statements",
         "Used when a function or method has too many return statement, "
         "making it hard to follow.",
     ),
     "R0912": (
-        "Too many branches (%s/%s)",
+        "It might be a bit challenging to understand the logic here with all the countless branches in this function or method. But hey, good luck trying to follow along!",
         "too-many-branches",
         "Used when a function or method has too many branches, "
         "making it hard to follow.",
     ),
     "R0913": (
-        "Too many arguments (%s/%s)",
+        "So apparently the function or method thinks it's okay to take ALL the arguments. It's not like we all have things to do and don't want to sit here all day waiting for it to finish. But hey, who needs efficiency anyway?",
         "too-many-arguments",
         "Used when a function or method takes too many arguments.",
     ),
     "R0914": (
-        "Too many local variables (%s/%s)",
+        "Oh, look at all these lovely local variables in this function or method. It's almost like someone was trying to break a record for the most cluttered code. How charming.",
         "too-many-locals",
         "Used when a function or method has too many local variables.",
     ),
     "R0915": (
-        "Too many statements (%s/%s)",
+        "Oh look, someone thought it would be cute to write a function or method with a gazillion statements. Maybe we should consider splitting it into smaller functions or methods because apparently, brevity is not their strong suit. Just a little friendly advice.",
         "too-many-statements",
         "Used when a function or method has too many statements. You "
         "should then split it in smaller functions / methods.",
     ),
     "R0916": (
-        "Too many boolean expressions in if statement (%s/%s)",
+        "Oh, how marvelous! Just a teensy bit of helpful advice: it appears that your if statement might be ever so slightly overloaded with boolean expressions. Perhaps it could benefit from a wee bit of simplification? Just a thought!",
         "too-many-boolean-expressions",
         "Used when an if statement contains too many boolean expressions.",
     ),

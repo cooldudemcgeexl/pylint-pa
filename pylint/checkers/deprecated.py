@@ -33,7 +33,7 @@ class DeprecatedMixin(BaseChecker):
 
     DEPRECATED_MODULE_MESSAGE: dict[str, MessageDefinitionTuple] = {
         "W4901": (
-            "Deprecated module %r",
+            "Oh, how delightful! We have ourselves a module that has been marked as deprecated, yet it is still being imported. Isn't that just fantastic?",
             "deprecated-module",
             "A module marked as deprecated is imported.",
             {"old_names": [("W0402", "old-deprecated-module")], "shared": True},
@@ -42,7 +42,7 @@ class DeprecatedMixin(BaseChecker):
 
     DEPRECATED_METHOD_MESSAGE: dict[str, MessageDefinitionTuple] = {
         "W4902": (
-            "Using deprecated method %s()",
+            "I guess someone thinks it's cute to mark this method as 'deprecated' and threaten to remove it in the future.",
             "deprecated-method",
             "The method is marked as deprecated and will be removed in the future.",
             {"old_names": [("W1505", "old-deprecated-method")], "shared": True},
@@ -51,7 +51,7 @@ class DeprecatedMixin(BaseChecker):
 
     DEPRECATED_ARGUMENT_MESSAGE: dict[str, MessageDefinitionTuple] = {
         "W4903": (
-            "Using deprecated argument %s of method %s()",
+            "Oh, I see you still insist on using the deprecated argument even though it will be removed in the future.",
             "deprecated-argument",
             "The argument is marked as deprecated and will be removed in the future.",
             {"old_names": [("W1511", "old-deprecated-argument")], "shared": True},
@@ -60,7 +60,7 @@ class DeprecatedMixin(BaseChecker):
 
     DEPRECATED_CLASS_MESSAGE: dict[str, MessageDefinitionTuple] = {
         "W4904": (
-            "Using deprecated class %s of module %s",
+            "Just a friendly little heads up, this class you're using here is marked as deprecated. You know what that means, right? Oh, you don't? Well, it means that it's going to be removed in the future. So, maybe you might want to consider finding an alternative before it's too late. But hey, no pressure!",
             "deprecated-class",
             "The class is marked as deprecated and will be removed in the future.",
             {"old_names": [("W1512", "old-deprecated-class")], "shared": True},
@@ -69,7 +69,7 @@ class DeprecatedMixin(BaseChecker):
 
     DEPRECATED_DECORATOR_MESSAGE: dict[str, MessageDefinitionTuple] = {
         "W4905": (
-            "Using deprecated decorator %s()",
+            "Well, congratulations! You've managed to use a decorator that is marked as completely deprecated and will be removed from existence in the near future. Keep up the amazing work!",
             "deprecated-decorator",
             "The decorator is marked as deprecated and will be removed in the future.",
             {"old_names": [("W1513", "old-deprecated-decorator")], "shared": True},

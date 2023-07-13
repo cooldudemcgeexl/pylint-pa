@@ -115,24 +115,24 @@ class BasicChecker(_BasicChecker):
     name = "basic"
     msgs = {
         "W0101": (
-            "Unreachable code",
+            "Oh, look at this fancy code hiding behind a 'return' or 'raise' statement! Like anyone will ever bother accessing it.",
             "unreachable",
             'Used when there is some code behind a "return" or "raise" '
             "statement, which will never be accessed.",
         ),
         "W0102": (
-            "Dangerous default value %s as argument",
+            "Oh, look at this clever use of mutable values like lists or dictionaries as default arguments! How innovative! But just a friendly reminder, it's generally frowned upon. Just thought you might like to know. Cheers!",
             "dangerous-default-value",
             "Used when a mutable value as list or dictionary is detected in "
             "a default value for an argument.",
         ),
         "W0104": (
-            "Statement seems to have no effect",
+            "Well, it's rather fascinating how this statement appears to lack any sort of impact, doesn't it?",
             "pointless-statement",
             "Used when a statement doesn't have (or at least seems to) any effect.",
         ),
         "W0105": (
-            "String statement has no effect",
+            "Oh, so now you're using strings as statements? That's cute. Just so you know, it has absolutely no effect. But hey, don't worry, I even made a special message just for this foolishness. Feel free to disable it if you're using those strings as documentation, pretending they have some actual value.",
             "pointless-string-statement",
             "Used when a string is used as a statement (which of course "
             "has no effect). This is a particular case of W0104 with its "
@@ -146,7 +146,7 @@ class BasicChecker(_BasicChecker):
             "to nothing. Probably something else was intended.",
         ),
         "W0108": (
-            "Lambda may not be necessary",
+            "Oh, I see you decided to use a lambda expression to make a function call on the same argument list. Just so you know, in almost every situation, you could have just replaced that lambda with the actual function being called. But hey, you do you!",
             "unnecessary-lambda",
             "Used when the body of a lambda expression is a function call "
             "on the same argument list as the lambda itself; such lambda "
@@ -154,12 +154,12 @@ class BasicChecker(_BasicChecker):
             "function being called in the body of the lambda.",
         ),
         "W0109": (
-            "Duplicate key %r in dictionary",
+            "Oh, look, someone decided to bind the same key multiple times in their dictionary expression. How creative.",
             "duplicate-key",
             "Used when a dictionary expression binds the same key multiple times.",
         ),
         "W0122": (
-            "Use of exec",
+            "Oh, look who decided to use the 'exec' statement. How adorable. Just so you know, using this function for user input is like playing with fire. And don't even get me started on how much slower it is compared to actual code. But hey, you do you. Just remember, it wouldn't hurt to explore some alternatives and maybe think about restricting the functions available. Just a thought.",
             "exec-used",
             "Raised when the 'exec' statement is used. It's dangerous to use this "
             "function for a user input, and it's also slower than actual code in "
@@ -167,7 +167,7 @@ class BasicChecker(_BasicChecker):
             "consider alternatives first and restrict the functions available.",
         ),
         "W0123": (
-            "Use of eval",
+            "Oh, you're using the 'eval' function? How interesting! Have you ever considered using `ast.literal_eval` instead? It's a much safer option for evaluating strings containing Python expressions from untrusted sources. But hey, it's up to you to decide what's best for your code. Just thought I'd mention it...",
             "eval-used",
             'Used when you use the "eval" function, to discourage its '
             "usage. Consider using `ast.literal_eval` for safely evaluating "
@@ -175,7 +175,7 @@ class BasicChecker(_BasicChecker):
             "from untrusted sources.",
         ),
         "W0150": (
-            "%s statement in finally block may swallow exception",
+            "Oh, how convenient! It seems that someone has decided to tuck away all the pesky exceptions that could have been raised in the try clause within the finally clause of this try...finally block. They won't be re-raised, of course, which makes troubleshooting a delightful guessing game for the rest of us.",
             "lost-exception",
             "Used when a break or a return statement is found inside the "
             "finally clause of a try...finally block: the exceptions raised "
@@ -183,7 +183,7 @@ class BasicChecker(_BasicChecker):
             "re-raised.",
         ),
         "W0199": (
-            "Assert called on a populated tuple. Did you mean 'assert x,y'?",
+            "Well, isn't it just fascinating that whenever you decide to call assert on a tuple, it magically ends up being true if the tuple is not empty and false if it is. How utterly surprising!",
             "assert-on-tuple",
             "A call of assert on a tuple will always evaluate to true if "
             "the tuple is not empty, and will always evaluate to false if "
@@ -199,69 +199,69 @@ class BasicChecker(_BasicChecker):
             "a name binding is another context manager.",
         ),
         "W0125": (
-            "Using a conditional statement with a constant value",
+            "Oh, how creative! Look at that conditional statement using a constant value for its test. I suppose the user must have meant to totally confuse everyone.",
             "using-constant-test",
             "Emitted when a conditional statement (If or ternary if) "
             "uses a constant value for its test. This might not be what "
             "the user intended to do.",
         ),
         "W0126": (
-            "Using a conditional statement with potentially wrong function or method call due to "
+            "Oh, how lovely! Looks like someone forgot to include those pesky parentheses when calling a function within a conditional statement. Nice try, though! Keep practicing!"
             "missing parentheses",
             "missing-parentheses-for-call-in-test",
             "Emitted when a conditional statement (If or ternary if) "
             "seems to wrongly call a function due to missing parentheses",
         ),
         "W0127": (
-            "Assigning the same variable %r to itself",
+            "Oh, wonderful! It seems someone thought it would be a brilliant idea to assign a variable to itself. Can you believe it? Just when you thought you had seen it all, right? Well, here's a little message to inform you that we have detected this highly questionable action. Bravo!",
             "self-assigning-variable",
             "Emitted when we detect that a variable is assigned to itself",
         ),
         "W0128": (
-            "Redeclared variable %r in assignment",
+            "Oh, clearly someone needs to show off their redeclaring skills by doing it in the same assignment. How impressive! But no worries, we're here to remind you that you've achieved the great feat of redeclaring a variable. Keep up the good work!",
             "redeclared-assigned-name",
             "Emitted when we detect that a variable was redeclared in the same assignment.",
         ),
         "E0111": (
-            "The first reversed() argument is not a sequence",
+            "Oh, how delightful! It seems someone here decided to use the reversed() builtin with an argument that is not a sequence. Aren't they just full of surprises? It appears this argument does not implement __reversed__, nor __getitem__ and __len__. How wonderful!",
             "bad-reversed-sequence",
             "Used when the first argument to reversed() builtin "
             "isn't a sequence (does not implement __reversed__, "
             "nor __getitem__ and __len__",
         ),
         "E0119": (
-            "format function is not called on str",
+            "Oh, look at that! The format function is missing on the str object. How silly of you to do something like print('value: {}').format(123) instead of the correct way, which is print('value: {}'.format(123)). I guess that might not be what you intended to do, but hey, it happens to the best of us!",
             "misplaced-format-function",
-            "Emitted when format function is not called on str object. "
+            "Emitted when Oh, look at that! The format function is missing on the str object. How silly of you to do something like print('value: {}').format(123) instead of the correct way, which is print('value: {}'.format(123)). I guess that might not be what you intended to do, but hey, it happens to the best of us! object. "
             'e.g doing print("value: {}").format(123) instead of '
             'print("value: {}".format(123)). This might not be what the user '
             "intended to do.",
         ),
         "W0129": (
-            "Assert statement has a string literal as its first argument. The assert will %s fail.",
+            "Oh, how lovely! Imagine having a string literal as the first argument of an assert statement. Clearly, that will effortlessly guarantee the assert always passes. How convenient.",
             "assert-on-string-literal",
             "Used when an assert statement has a string literal as its first argument, which will "
             "cause the assert to always pass.",
         ),
         "W0130": (
-            "Duplicate value %r in set",
+            "Oh, how delightful! It appears that our dear set contains the same value not once, but two or more times! How charming!",
             "duplicate-value",
             "This message is emitted when a set contains the same value two or more times.",
         ),
         "W0131": (
-            "Named expression used without context",
+            "Oh look, here we have another so-called 'named expression' prancing about, completely disregarding any sense of proper context for its regular assignment. How dare it try to do assignments outside if, for, while, or a comprehension? Absolutely audacious!",
             "named-expr-without-context",
             "Emitted if named expression is used to do a regular assignment "
             "outside a context like if, for, while, or a comprehension.",
         ),
         "W0133": (
-            "Exception statement has no effect",
+            "Oh, look at this! An exception was created, but apparently, nobody bothered to assign it, raise it, or even return it for potential use elsewhere. How considerate of them!",
             "pointless-exception-statement",
             "Used when an exception is created without being assigned, raised or returned "
             "for subsequent use elsewhere.",
         ),
         "W0134": (
-            "'return' shadowed by the 'finally' clause.",
+            "Oh, lovely. Look what we have here. A 'return' statement has managed to sneak its way into a 'finally' block. Just thought you should know that such misconduct will direfully overwrite the return value of your precious function. But hey, who am I to say? Feel free to continue down this treacherous path if you so desire.",
             "return-in-finally",
             "Emitted when a 'return' statement is found in a 'finally' block. This will overwrite "
             "the return value of a function and should be avoided.",

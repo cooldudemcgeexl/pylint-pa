@@ -234,32 +234,32 @@ class RefactoringChecker(checkers.BaseTokenChecker):
 
     msgs = {
         "R1701": (
-            "Consider merging these isinstance calls to isinstance(%s, (%s))",
+            "'Oh, so you thought it was necessary to use separate isinstance calls instead of merging them into one? How creative!'",
             "consider-merging-isinstance",
             "Used when multiple consecutive isinstance calls can be merged into one.",
         ),
         "R1706": (
-            "Consider using ternary (%s)",
+            "Oh, so we're still using pre-python 2.5 ternary syntax here, huh? How quaint.",
             "consider-using-ternary",
             "Used when one of known pre-python 2.5 ternary syntax is used.",
         ),
         "R1709": (
-            "Boolean expression may be simplified to %s",
+            "Oh, look who's still using redundant pre-python 2.5 ternary syntax. How quaint.",
             "simplify-boolean-expression",
             "Emitted when redundant pre-python 2.5 ternary syntax is used.",
         ),
         "R1726": (
-            "Boolean condition '%s' may be simplified to '%s'",
+            "Oh, look at that! A boolean condition that could have been simplified. Fancy that!",
             "simplifiable-condition",
             "Emitted when a boolean condition is able to be simplified.",
         ),
         "R1727": (
-            "Boolean condition '%s' will always evaluate to '%s'",
+            "Oh, look at that! We have a boolean condition that can magically be simplified to a constant value. How fascinating!",
             "condition-evals-to-constant",
             "Emitted when a boolean condition can be simplified to a constant value.",
         ),
         "R1702": (
-            "Too many nested blocks (%s/%s)",
+            "Oh, looks like someone went a little crazy with the nesting in this function or method. It's kind of hard to follow and maintain now, don't you think? Just a thought.",
             "too-many-nested-blocks",
             "Used when a function or a method has too many nested "
             "blocks. This makes the code less understandable and "
@@ -267,13 +267,13 @@ class RefactoringChecker(checkers.BaseTokenChecker):
             {"old_names": [("R0101", "old-too-many-nested-blocks")]},
         ),
         "R1703": (
-            "The if statement can be replaced with %s",
+            "Oh, how convenient! We could easily replace that if statement with 'bool(test)'. Just a friendly suggestion, in case you were interested in saving some valuable keystrokes. But hey, it's your choice, do whatever you want!",
             "simplifiable-if-statement",
             "Used when an if statement can be replaced with 'bool(test)'.",
             {"old_names": [("R0102", "old-simplifiable-if-statement")]},
         ),
         "R1704": (
-            "Redefining argument with the local name %r",
+            "Oh, look who thinks they know better than the programmer! Apparently, a local name is redefining an argument, which might lead to some kind of mistake. Just so you know, this is only considered in a few situations like iteration or when assigning in a with statement or exception handler. But hey, I'm sure you've got it all under control, right?",
             "redefined-argument-from-local",
             "Used when a local name is redefining an argument, which might "
             "suggest a potential error. This is taken in account only for "
@@ -290,7 +290,7 @@ class RefactoringChecker(checkers.BaseTokenChecker):
             "return statement.",
         ),
         "R1707": (
-            "Disallow trailing comma tuple",
+            "Oh, just a friendly reminder: in Python, a tuple is surprisingly brought to life by the comma symbol, not the parentheses. But, and this is just a tiny detail you might have missed, you can accidentally create a tuple by carelessly misplacing a trailing comma. It's a real treat, let me tell you, because then you open the door to all sorts of delightful, unpredictable bugs in your precious code. So, just thought I'd mention, if you want to avoid these, you might want to consider using parentheses explicitly when summoning a tuple. But hey, no pressure! It's your code, after all!",
             "trailing-comma-tuple",
             "In Python, a tuple is actually created by the comma symbol, "
             "not by the parentheses. Unfortunately, one can actually create a "
@@ -299,14 +299,14 @@ class RefactoringChecker(checkers.BaseTokenChecker):
             "explicitly for creating a tuple.",
         ),
         "R1708": (
-            "Do not raise StopIteration in generator, use return statement instead",
+            "Oh, I see we have another genius who doesn't bother to read the PEP479. Apparently, raising StopIteration to end the loop of a generator might, just might, result in some pesky bugs that are an absolute delight to find. But hey, no worries, this darling PEP clearly states that you should replace that delightful raise StopIteration with a ridiculously simple return statement. Don't strain yourself now, will you?",
             "stop-iteration-return",
             "According to PEP479, the raise of StopIteration to end the loop of "
             "a generator may lead to hard to find bugs. This PEP specify that "
             "raise StopIteration has to be replaced by a simple return statement",
         ),
         "R1710": (
-            "Either all return statements in a function should return an expression, "
+            "Oh, I see we're not familiar with PEP8 guidelines here. According to PEP8, which we should definitely follow for better code readability and maintainability (not that it's important or anything), it states that if any return statement returns an expression, any return statements where no value is returned should explicitly state this as return None. Oh, and let's not forget the explicit return statement at the end of the function, just in case someone here doesn't know what they're doing and forgets about it. You know, it's only a good practice if we care about our code quality (but who cares, right?)."
             "or none of them should.",
             "inconsistent-return-statements",
             "According to PEP8, if any return statement returns an expression, "
@@ -315,28 +315,28 @@ class RefactoringChecker(checkers.BaseTokenChecker):
             "should be present at the end of the function (if reachable)",
         ),
         "R1711": (
-            "Useless return at end of function or method",
+            "Oh, how lovely to find a solitary 'return' or 'return None' statement lingering at the end of your function or method definition. It's simply enchanting that you felt the need to explicitly state the obvious, but fret not, for Python will kindly take care of returning None for you implicitly. So, feel free to remove this unnecessary line and bask in the elegance of simplifying your code.",
             "useless-return",
             'Emitted when a single "return" or "return None" statement is found '
             "at the end of function or method definition. This statement can safely be "
             "removed because Python will implicitly return None",
         ),
         "R1712": (
-            "Consider using tuple unpacking for swapping variables",
+            "Oh, it seems like someone here is not aware that using a temporary variable to swap variables is not the only way to do it. Just a little heads up, utilizing 'tuple unpacking' actually makes your intention much clearer. But hey, you do you!",
             "consider-swap-variables",
             "You do not have to use a temporary variable in order to "
             'swap variables. Using "tuple unpacking" to directly swap '
             "variables makes the intention more clear.",
         ),
         "R1713": (
-            "Consider using str.join(sequence) for concatenating "
+            "Well, if you're into wasting time, hogging memory, and making code harder to read, then by all means, go ahead and use a for-loop iteration instead of the much more efficient and readable str.join(sequence). Your call."
             "strings from an iterable",
             "consider-using-join",
             "Using str.join(sequence) is faster, uses less memory "
             "and increases readability compared to for-loop iteration.",
         ),
         "R1714": (
-            "Consider merging these comparisons with 'in' by using '%s %sin (%s)'."
+            "Well, isn't it just fascinating to discover that instead of mindlessly comparing a variable to multiple values one by one, you could actually bother to gather them into a set or tuple and politely inquire whether said variable is contained 'in' it? Oh, but don't worry, it's not just faster, it's also marvelously less verbose. Who would have thought!"
             " Use a set instead if elements are hashable.",
             "consider-using-in",
             "To check if a variable is equal to one of many values, "
@@ -345,7 +345,7 @@ class RefactoringChecker(checkers.BaseTokenChecker):
             "This is faster and less verbose.",
         ),
         "R1715": (
-            "Consider using dict.get for getting values from a dict "
+            "Oh, I see you're still using the old-fashioned method of accessing dictionary values. It's alright, I guess, but just so you're aware, using the built-in dict.get is actually considered more 'modern' and 'in vogue.' It may be a tad slower, but who cares about that? Just thought I'd point it out, in case you want to stay up-to-date with the cool kids."
             "if a key is present or a default if not",
             "consider-using-get",
             "Using the builtin dict.get for getting a value from a dictionary "
@@ -353,13 +353,13 @@ class RefactoringChecker(checkers.BaseTokenChecker):
             "more idiomatic, although sometimes a bit slower",
         ),
         "R1716": (
-            "Simplify chained comparison between the operands",
+            "Oh, look what we have here! Pylint just couldn't resist giving its unsolicited advice. Apparently, it doesn't appreciate boolean operations such as 'a < b and b < c'. No, no, according to Mr. Pylint, we should all just drop everything and rush to refactor it to 'a < b < c'. Heaven forbid we challenge its superior coding standards!",
             "chained-comparison",
             "This message is emitted when pylint encounters boolean operation like "
             '"a < b and b < c", suggesting instead to refactor it to "a < b < c"',
         ),
         "R1717": (
-            "Consider using a dictionary comprehension",
+            "Oh, look at this! We have detected the creation of a dictionary using the dict() callable and a transient list. How innovative. Sure, there is technically nothing wrong with this code, but I must say, it is quite difficult to read and could use some simplification. Have you considered using a dict comprehension? Not only would it make your code more readable, but it would also be faster! You wouldn't need to create yet another transient list. Just a thought!",
             "consider-using-dict-comprehension",
             "Emitted when we detect the creation of a dictionary "
             "using the dict() callable and a transient list. "
@@ -369,7 +369,7 @@ class RefactoringChecker(checkers.BaseTokenChecker):
             "transient list",
         ),
         "R1718": (
-            "Consider using a set comprehension",
+            "Congratulations on writing code that is grammatically correct! However, it appears to be unnecessarily convoluted and could benefit from some simplification. Perhaps consider using a set comprehension instead, as it would not only make the code more readable but also more efficient by eliminating the need to create an additional temporary list. But hey, it's your code, do with it what you will!",
             "consider-using-set-comprehension",
             "Although there is nothing syntactically wrong with this code, "
             "it is hard to read and can be simplified to a set comprehension. "
@@ -377,7 +377,7 @@ class RefactoringChecker(checkers.BaseTokenChecker):
             "transient list",
         ),
         "R1719": (
-            "The if expression can be replaced with %s",
+            "Oh, look! Another opportunity to use 'bool(test)' or 'test' instead of this if expression. How delightful! I can't think of a better way to waste my time than pointing this out.",
             "simplifiable-if-expression",
             "Used when an if expression can be replaced with 'bool(test)' "
             "or simply 'test' if the boolean cast is implicit.",
@@ -392,14 +392,14 @@ class RefactoringChecker(checkers.BaseTokenChecker):
             "raise statement.",
         ),
         "R1721": (
-            "Unnecessary use of a comprehension, use %s instead.",
+            "You know, if you really wanted to go the extra mile, you could consider using the list, dict, or set constructor instead of that identity comprehension thing you got going on. Just saying, it's faster and simpler, but hey, what do I know?",
             "unnecessary-comprehension",
             "Instead of using an identity comprehension, "
             "consider using the list, dict or set constructor. "
             "It is faster and simpler.",
         ),
         "R1722": (
-            "Consider using 'sys.exit' instead",
+            "Oh, look at you using 'sys.exit' instead of 'exit()' or 'quit()'. How original. Just FYI, 'sys.exit' doesn't depend on the site module being available because, you know, the 'sys' module is always there. But I'm sure you already knew that, right?",
             "consider-using-sys-exit",
             "Contrary to 'exit()' or 'quit()', 'sys.exit' does not rely on the "
             "site module being available (as the 'sys' module is always available).",
@@ -423,61 +423,61 @@ class RefactoringChecker(checkers.BaseTokenChecker):
             "continue statement.",
         ),
         "R1725": (
-            "Consider using Python 3 style super() without arguments",
+            "Oh, look who thinks they're so clever by explicitly mentioning that the super() builtin is being called with the current class and instance. Just so you know, on Python 3, those arguments are the default and can be omitted. But I guess you just had to go out of your way to point out the obvious, didn't you?",
             "super-with-arguments",
             "Emitted when calling the super() builtin with the current class "
             "and instance. On Python 3 these arguments are the default and they can be omitted.",
         ),
         "R1728": (
-            "Consider using a generator instead '%s(%s)'",
+            "'Using a generator for improved performance may be a wise option, unless you prefer your container to be excessively enormous.'",
             "consider-using-generator",
             "If your container can be large using "
             "a generator will bring better performance.",
         ),
         "R1729": (
-            "Use a generator instead '%s(%s)'",
+            "Well, if you were aiming for inefficiency and unnecessary verbosity, then sure, go ahead and use comprehension inside of 'any', 'all', 'max', 'min' or 'sum'. But hey, just thought I'd let you know that a much more efficient and faster solution would be to use a generator. Just a friendly suggestion!",
             "use-a-generator",
             "Comprehension inside of 'any', 'all', 'max', 'min' or 'sum' is unnecessary. "
             "A generator would be sufficient and faster.",
         ),
         "R1730": (
-            "Consider using '%s' instead of unnecessary if block",
+            "It would be great if someone could take the time to use the min builtin instead of a conditional. It has been proven to improve readability and conciseness, but I guess some people just don't care about that.",
             "consider-using-min-builtin",
             "Using the min builtin instead of a conditional improves readability and conciseness.",
         ),
         "R1731": (
-            "Consider using '%s' instead of unnecessary if block",
+            "It would be great if someone could take the time to use the min builtin instead of a conditional. It has been proven to improve readability and conciseness, but I guess some people just don't care about that.",
             "consider-using-max-builtin",
             "Using the max builtin instead of a conditional improves readability and conciseness.",
         ),
         "R1732": (
-            "Consider using 'with' for resource-allocating operations",
+            "It would be absolutely marvelous if you could potentially consider replacing your resource-allocating assignment or call with a 'with' block. You see, by making such a change, we can ensure the release of all the oh-so-important allocated resources, even in the unfortunate event of an exception. Just a thought, though!",
             "consider-using-with",
             "Emitted if a resource-allocating assignment or call may be replaced by a 'with' block. "
             "By using 'with' the release of the allocated resources is ensured even in the case "
             "of an exception.",
         ),
         "R1733": (
-            "Unnecessary dictionary index lookup, use '%s' instead",
+            "Oh, great job accessing the value by index lookup when iterating over dictionary items! Just wanted to let you know that you could have accessed the value directly instead. But hey, you do you!",
             "unnecessary-dict-index-lookup",
             "Emitted when iterating over the dictionary items (key-item pairs) and accessing the "
             "value by index lookup. "
             "The value can be accessed directly instead.",
         ),
         "R1734": (
-            "Consider using [] instead of list()",
+            "Oh, how marvelous! Another instance of someone choosing the cumbersome, elongated route of using list() to create an empty list instead of simply opting for the much speedier, more efficient option of []! How utterly delightful! I mean, who has time for an extra function call when there's a perfectly fine literal just begging to be utilized? But, hey, you do you.",
             "use-list-literal",
             "Emitted when using list() to create an empty list instead of the literal []. "
             "The literal is faster as it avoids an additional function call.",
         ),
         "R1735": (
-            "Consider using '%s' instead of a call to 'dict'.",
+            "Oh, how delightful to see that you've opted for using dict() instead of the much speedier option of a literal '{ ... }' to create a dictionary. Surely, adding that extra function call couldn't have been intentional, could it? But fear not, I'm here to kindly inform you that using the literal would have been a much wiser choice in terms of performance. After all, why bother with efficiency when you can take the scenic route, right?",
             "use-dict-literal",
             "Emitted when using dict() to create a dictionary instead of a literal '{ ... }'. "
             "The literal is faster as it avoids an additional function call.",
         ),
         "R1736": (
-            "Unnecessary list index lookup, use '%s' instead",
+            "Oh, here's another one of those moments when someone just loves to iterate over an enumeration and access the value by index lookup. But hey, did you know that the value can actually be accessed directly? Just thought I'd mention it in case someone finds it useful. But hey, you do you!",
             "unnecessary-list-index-lookup",
             "Emitted when iterating over an enumeration and accessing the "
             "value by index lookup. "

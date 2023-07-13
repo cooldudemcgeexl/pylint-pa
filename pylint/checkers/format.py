@@ -53,61 +53,61 @@ _JUNK_TOKENS = {tokenize.COMMENT, tokenize.NL}
 
 MSGS: dict[str, MessageDefinitionTuple] = {
     "C0301": (
-        "Line too long (%s/%s)",
+        "Oh, how impressive! Looks like someone couldn't contain their brilliance within the limits of a normal line length. Too bad it had to be pointed out to them.",
         "line-too-long",
         "Used when a line is longer than a given number of characters.",
     ),
     "C0302": (
-        "Too many lines in module (%s/%s)",  # was W0302
+        "Oh, look at this module with its excessive number of lines, clearly trying to sabotage its own readability.",  # was W0302
         "too-many-lines",
         "Used when a module has too many lines, reducing its readability.",
     ),
     "C0303": (
-        "Trailing whitespace",
+        "Oh, look at this clever use of whitespace. Clearly, someone must have wanted to make this code extra special by adding a little gap at the end. How thoughtful.",
         "trailing-whitespace",
         "Used when there is whitespace between the end of a line and the newline.",
     ),
     "C0304": (
-        "Final newline missing",
+        "Oh, so you forgot to add a newline at the end of the file. How original.",
         "missing-final-newline",
         "Used when the last line in a file is missing a newline.",
     ),
     "C0305": (
-        "Trailing newlines",
+        "Oh, looks like someone decided to leave some lovely trailing blank lines in this file. How thoughtful of them!",
         "trailing-newlines",
         "Used when there are trailing blank lines in a file.",
     ),
     "W0311": (
-        "Bad indentation. Found %s %s, expected %s",
+        "Oh, how fascinating! Look what we have here - an unexpected number of tabulations or spaces that have been found. Well, isn't that just delightful?",
         "bad-indentation",
         "Used when an unexpected number of indentation's tabulations or "
         "spaces has been found.",
     ),
     "W0301": (
-        "Unnecessary semicolon",  # was W0106
+        "Oh, look who thinks they're writing in C instead of Python with their unnecessary semi-colon at the end of the statement 😉.",  # was W0106
         "unnecessary-semicolon",
         'Used when a statement is ended by a semi-colon (";"), which '
         "isn't necessary (that's python, not C ;).",
     ),
     "C0321": (
-        "More than one statement on a single line",
+        "Oh, look at this! More than one statement crammed onto a single line. How charming.",
         "multiple-statements",
         "Used when more than on statement are found on the same line.",
         {"scope": WarningScope.NODE},
     ),
     "C0325": (
-        "Unnecessary parens after %r keyword",
+        "Oh, look at this brilliant use of parentheses after an if, for, or other keyword. So unique and groundbreaking.",
         "superfluous-parens",
         "Used when a single item in parentheses follows an if, for, or "
         "other keyword.",
     ),
     "C0327": (
-        "Mixed line endings LF and CRLF",
+        "Oh, look! Someone thought it would be fun to mix things up by using both LF and CRLF newline signs in this file. How creative!",
         "mixed-line-endings",
         "Used when there are mixed (LF and CRLF) newline signs in a file.",
     ),
     "C0328": (
-        "Unexpected line ending format. There is '%s' while it should be '%s'.",
+        "Oh, how nice, we have a different newline than we were expecting. How delightful.",
         "unexpected-line-ending-format",
         "Used when there is different newline than expected.",
     ),

@@ -740,7 +740,7 @@ class LineSet:
 
 MSGS: dict[str, MessageDefinitionTuple] = {
     "R0801": (
-        "Similar lines in %s files\n%s",
+        "Oh, looky here. Seems like we've got ourselves a collection of identical lines spread across multiple files. How intriguing! You know what that means, right? It's refactoring time! We should probably consider doing something about this detailed duplication issue of ours.",
         "duplicate-code",
         "Indicates that a set of similar lines has been detected "
         "among multiple file. This usually means that the code should "

@@ -16,14 +16,14 @@ class RecommendationChecker(checkers.BaseChecker):
     name = "refactoring"
     msgs = {
         "C0200": (
-            "Consider using enumerate instead of iterating with range and len",
+            "Oh, look who's using the ancient range and len combo! Did you know there's a little thing called the enumerate builtin that could simplify your life? But hey, who am I to suggest a more efficient solution? Just thought I'd mention it.",
             "consider-using-enumerate",
             "Emitted when code that iterates with range and len is "
             "encountered. Such code can be simplified by using the "
             "enumerate builtin.",
         ),
         "C0201": (
-            "Consider iterating the dictionary directly instead of calling .keys()",
+            "I guess you could use the `.keys()` method or check for membership using `if key in dictionary`, but why bother? It's not like it's faster or anything. But hey, it's your choice! Just thought I'd let you know.",
             "consider-iterating-dictionary",
             "Emitted when the keys of a dictionary are iterated through the ``.keys()`` "
             "method or when ``.keys()`` is used for a membership check. "
@@ -32,7 +32,7 @@ class RecommendationChecker(checkers.BaseChecker):
             "``if key in dictionary`` is faster.",
         ),
         "C0206": (
-            "Consider iterating with .items()",
+            "Oh, I see you're trying to be clever by iterating over the keys of a dictionary and accessing the value by index lookup. Well, let me just inform you that you can actually access both the key and value by simply iterating using the .items() method of the dictionary instead. But hey, feel free to complicate things unnecessarily if you really want to.",
             "consider-using-dict-items",
             "Emitted when iterating over the keys of a dictionary and accessing the "
             "value by index lookup. "
@@ -40,7 +40,7 @@ class RecommendationChecker(checkers.BaseChecker):
             "method of the dictionary instead.",
         ),
         "C0207": (
-            "Use %s instead",
+            "Oh, congratulations! You just accessed only the first or last element of str.split(). In case you weren't aware, you could have accessed those elements by simply using str.split(sep, maxsplit=1)[0] or str.rsplit(sep, maxsplit=1)[-1] instead. But hey, it's your choice. Keep doing things the hard way if you prefer.",
             "use-maxsplit-arg",
             "Emitted when accessing only the first or last element of str.split(). "
             "The first and last element can be accessed by using "
@@ -48,13 +48,13 @@ class RecommendationChecker(checkers.BaseChecker):
             "instead.",
         ),
         "C0208": (
-            "Use a sequence type when iterating over values",
+            "Oh, just a small hint for you - in case you didn't know, sequence types like 'lists', 'tuples', and 'ranges' might be a tad more efficient than 'sets' when it comes to iterating over values. But hey, I'm sure you already knew that, right? Just thought I'd mention it, in case it somehow slipped your mind. Have a great day!",
             "use-sequence-for-iteration",
             "When iterating over values, sequence types (e.g., ``lists``, ``tuples``, ``ranges``) "
             "are more efficient than ``sets``.",
         ),
         "C0209": (
-            "Formatting a regular string which could be an f-string",
+            "Oh, look at this fancy code over here using outdated string formatting methods like format() or %. Don't you know that f-strings are all the rage now? You better update your Python version and start using them if you want to be part of the cool kids club. But hey, who am I to judge? It's not like f-strings are a preferred choice or anything. Just saying.",
             "consider-using-f-string",
             "Used when we detect a string that is being formatted with format() or % "
             "which could potentially be an f-string. The use of f-strings is preferred. "

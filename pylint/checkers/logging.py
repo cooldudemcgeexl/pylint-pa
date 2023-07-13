@@ -25,7 +25,7 @@ MSGS: dict[
     str, MessageDefinitionTuple
 ] = {  # pylint: disable=consider-using-namedtuple-or-dataclass
     "W1201": (
-        "Use %s formatting in logging functions",
+        "Oh, look at you using the old and outdated 'logging.<logging method>(format_string % (format_args...))' call form for your logging statement. How cute. Maybe you should consider using a more modern and efficient type of string formatting instead. I mean, you can still use the % formatting, but why not let the logging function handle the interpolation for you by passing the parameters as arguments? Unless, of course, you've disabled logging-fstring-interpolation, in which case you can use fstring formatting. And hey, if logging-format-interpolation is disabled too, you can always resort to the good old str.format. Just some friendly suggestions, of course. Take it or leave it.",
         "logging-not-lazy",
         "Used when a logging statement has a call form of "
         '"logging.<logging method>(format_string % (format_args...))". '
@@ -38,7 +38,7 @@ MSGS: dict[
         "you can use str.format.",
     ),
     "W1202": (
-        "Use %s formatting in logging functions",
+        "Oh, look at you using the old and outdated 'logging.<logging method>(format_string % (format_args...))' call form for your logging statement. How cute. Maybe you should consider using a more modern and efficient type of string formatting instead. I mean, you can still use the % formatting, but why not let the logging function handle the interpolation for you by passing the parameters as arguments? Unless, of course, you've disabled logging-fstring-interpolation, in which case you can use fstring formatting. And hey, if logging-format-interpolation is disabled too, you can always resort to the good old str.format. Just some friendly suggestions, of course. Take it or leave it.",
         "logging-format-interpolation",
         "Used when a logging statement has a call form of "
         '"logging.<logging method>(format_string.format(format_args...))". '
@@ -51,7 +51,7 @@ MSGS: dict[
         "you can use % formatting as normal.",
     ),
     "W1203": (
-        "Use %s formatting in logging functions",
+        "Oh, look at you using the old and outdated 'logging.<logging method>(format_string % (format_args...))' call form for your logging statement. How cute. Maybe you should consider using a more modern and efficient type of string formatting instead. I mean, you can still use the % formatting, but why not let the logging function handle the interpolation for you by passing the parameters as arguments? Unless, of course, you've disabled logging-fstring-interpolation, in which case you can use fstring formatting. And hey, if logging-format-interpolation is disabled too, you can always resort to the good old str.format. Just some friendly suggestions, of course. Take it or leave it.",
         "logging-fstring-interpolation",
         "Used when a logging statement has a call form of "
         '"logging.<logging method>(f"...")".'
@@ -64,24 +64,24 @@ MSGS: dict[
         "you can use % formatting as normal.",
     ),
     "E1200": (
-        "Unsupported logging format character %r (%#02x) at index %d",
+        "Oh, well, it seems like someone decided to use an unsupported format character in their oh-so-special logging statement format string. How interesting!",
         "logging-unsupported-format",
         "Used when an unsupported format character is used in a logging "
         "statement format string.",
     ),
     "E1201": (
-        "Logging format string ends in middle of conversion specifier",
+        "Oh, look who couldn't finish their logging statement format string properly. How surprising.",
         "logging-format-truncated",
         "Used when a logging statement format string terminates before "
         "the end of a conversion specifier.",
     ),
     "E1205": (
-        "Too many arguments for logging format string",
+        "Oh, looks like we're playing a game of 'who can provide too many arguments for a logging format string!' Congrats, you win this round.",
         "logging-too-many-args",
         "Used when a logging format string is given too many arguments.",
     ),
     "E1206": (
-        "Not enough arguments for logging format string",
+        "Oh, look at this! Seems like someone didn't bother providing enough arguments for their precious logging format string. How thoughtful of them!",
         "logging-too-few-args",
         "Used when a logging format string is given too few arguments.",
     ),

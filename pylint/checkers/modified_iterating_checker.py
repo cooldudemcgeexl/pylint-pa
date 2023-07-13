@@ -29,20 +29,20 @@ class ModifiedIterationChecker(checkers.BaseChecker):
 
     msgs = {
         "W4701": (
-            "Iterated list '%s' is being modified inside for loop body, consider iterating through a copy of it "
+            "Oh, would you look at that! It seems like someone decided to add or remove items from a list while it was being iterated through. How delightful! However, I must inform you that such actions can cause some quite unexpected behavior. So, if you are interested in avoiding any surprises, might I suggest using a copy of the list instead? Just a friendly little tip for you."
             "instead.",
             "modified-iterating-list",
             "Emitted when items are added or removed to a list being iterated through. "
             "Doing so can result in unexpected behaviour, that is why it is preferred to use a copy of the list.",
         ),
         "E4702": (
-            "Iterated dict '%s' is being modified inside for loop body, iterate through a copy of it instead.",
+            "Oh, look who decided to add or remove items from a dict being iterated through! How utterly brilliant! Of course, doing so would raise a RuntimeError, but who am I to expect you to know that? No worries, I'm just here to remind you of your mistake. You're welcome.",
             "modified-iterating-dict",
             "Emitted when items are added or removed to a dict being iterated through. "
             "Doing so raises a RuntimeError.",
         ),
         "E4703": (
-            "Iterated set '%s' is being modified inside for loop body, iterate through a copy of it instead.",
+            "Oh! Looks like someone decided to add or remove items from the set while it was being iterated through. How thoughtful! Just FYI, this little action of theirs has triggered a delightful RuntimeError. Kudos to them for being so proactive!",
             "modified-iterating-set",
             "Emitted when items are added or removed to a set being iterated through. "
             "Doing so raises a RuntimeError.",

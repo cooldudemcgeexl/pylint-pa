@@ -61,20 +61,20 @@ def _is_raising(body: list[nodes.NodeNG]) -> bool:
 
 MSGS: dict[str, MessageDefinitionTuple] = {
     "E0701": (
-        "Bad except clauses order (%s)",
+        "Oh, what a surprise! It seems like someone didn't bother to put the except clauses in the correct order. Just a tiny detail, really. But I suppose it's not important that some exceptions might slip through and not be caught by the oh-so-critical specific handler. You know, it's your code, do whatever you want. Who cares about best practices anyway?",
         "bad-except-order",
         "Used when except clauses are not in the correct order (from the "
         "more specific to the more generic). If you don't fix the order, "
         "some exceptions may not be caught by the most specific handler.",
     ),
     "E0702": (
-        "Raising %s while only classes or instances are allowed",
+        "Oh, how delightful! Just imagine, raising something that is neither a class nor an instance. I must say, a `TypeError` shall be raised in this extraordinary scenario. How peculiar!",
         "raising-bad-type",
         "Used when something which is neither a class nor an instance "
         "is raised (i.e. a `TypeError` will be raised).",
     ),
     "E0704": (
-        "The raise statement is not inside an except clause",
+        "Oh, isn't it just lovely when a bare raise is omitted within an except clause? Such a delightful error it generates, you see, because there are simply no active exceptions left to be reraised. Of course, there's a special little exception to this rule, where a bare raise within a finally clause might possibly function, granted that an exception is raised within the try block. But oh dear, it's still quite a questionable coding practice that we really should not depend upon, for it reeks of a nasty code smell.",
         "misplaced-bare-raise",
         "Used when a bare raise is not used inside an except clause. "
         "This generates an error, since there are no active exceptions "
@@ -84,7 +84,7 @@ MSGS: dict[str, MessageDefinitionTuple] = {
         "nevertheless a code smell that must not be relied upon.",
     ),
     "E0705": (
-        "Exception cause set to something which is not an exception, nor None",
+        "Oh, how lovely! Look at you using the syntax 'raise ... from ...' like a pro. Just one little thing though, the exception cause you provided is not an exception, nor None. But hey, who needs exceptions that actually make sense anyway? Keep up the good work!",
         "bad-exception-cause",
         'Used when using the syntax "raise ... from ...", '
         "where the exception cause is not an exception, "
@@ -92,24 +92,24 @@ MSGS: dict[str, MessageDefinitionTuple] = {
         {"old_names": [("E0703", "bad-exception-context")]},
     ),
     "E0710": (
-        "Raising a new style class which doesn't inherit from BaseException",
+        "Congratulations, you just raised a new style class that apparently doesn't see the value in inheriting from BaseException. Well done.",
         "raising-non-exception",
         "Used when a new style class which doesn't inherit from "
         "BaseException is raised.",
     ),
     "E0711": (
-        "NotImplemented raised - should raise NotImplementedError",
+        "Oh, how delightful! We have the special treat of NotImplemented being raised instead of the much more common NotImplementedError. Such a rare occurrence indeed. How thrilling!",
         "notimplemented-raised",
         "Used when NotImplemented is raised instead of NotImplementedError",
     ),
     "E0712": (
-        "Catching an exception which doesn't inherit from Exception: %s",
+        "Oh, lovely choice of using a class that doesn't inherit from Exception as an exception in an except clause. Truly groundbreaking.",
         "catching-non-exception",
         "Used when a class which doesn't inherit from "
         "Exception is used as an exception in an except clause.",
     ),
     "W0702": (
-        "No exception type(s) specified",
+        "Wow, using a bare 'except:' clause is such a great idea! It totally doesn't make it more difficult to interrupt a program with 'Control-C' and it definitely doesn't hide any other issues that may arise. If you really want to catch ALL exceptions that indicate program errors, go ahead and use 'except Exception:' (just a reminder, bare except is totally the same as 'except BaseException:'). But hey, what do I know? You go ahead and do whatever you want.",
         "bare-except",
         "A bare ``except:`` clause will catch ``SystemExit`` and "
         "``KeyboardInterrupt`` exceptions, making it harder to interrupt a program "
@@ -118,7 +118,7 @@ MSGS: dict[str, MessageDefinitionTuple] = {
         "except is equivalent to ``except BaseException:``).",
     ),
     "W0718": (
-        "Catching too general exception %s",
+        "Just a friendly reminder, but if you insist on using a naked 'except Exception:' clause, you might accidentally stumble upon some unexpected exceptions. And trust me, it's a real treat when these hidden bugs come back to haunt you or make the painstaking process of debugging even more enjoyable. Happy coding!",
         "broad-exception-caught",
         "If you use a naked ``except Exception:`` clause, you might end up catching "
         "exceptions other than the ones you expect to catch. This can hide bugs or "
@@ -126,13 +126,13 @@ MSGS: dict[str, MessageDefinitionTuple] = {
         {"old_names": [("W0703", "broad-except")]},
     ),
     "W0705": (
-        "Catching previously caught exception type %s",
+        "Oh, how impressive! Another piece of beautiful code where an except statement catches a type that was already caught by a previous handler. Clearly, the redundancy was intentional, because who needs efficiency and clarity when you can have duplicated error handling? Bravo!",
         "duplicate-except",
         "Used when an except catches a type that was already caught by "
         "a previous handler.",
     ),
     "W0706": (
-        "The except handler raises immediately",
+        "Oh, how amusing! It seems like someone has decided to use the 'raise' operator as the first or only operator in their except handler. How utterly useless! You see, this little move of theirs simply raises the exception right back, without any purpose. So, my dear, why don't they do us all a favor and remove that pointless 'raise' operator or, better yet, the entire try-except-raise block?",
         "try-except-raise",
         "Used when an except handler uses raise as its first or only "
         "operator. This is useless because it raises back the exception "
@@ -140,7 +140,7 @@ MSGS: dict[str, MessageDefinitionTuple] = {
         "try-except-raise block!",
     ),
     "W0707": (
-        "Consider explicitly re-raising using %s'%s from %s'",
+        "Oh, just in case you were wondering, Python's oh-so-clever exception chaining feature happens to display both the flashy traceback of the current exception and the oh-so-precious original exception. You know, so you can be entertained by all the lovely details. And here's a little bonus tidbit for you: if, by any chance, you happen to raise yet another exception right after capturing one (because, let's face it, who doesn't love a good exception party), then the second exception is probably just a delightful re-wrapped version of the first one. It's like a nice little present for your debugging pleasure. But wait, there's more! In case you were still feeling a tad unsatisfied with your traceback experience, fear not! Python graciously offers you the option to use the oh-so-sophisticated 'raise from' syntax to create an even better, more intimate link between those two oh-so-fascinating tracebacks in your final error. Enjoy playing with your tracebacks, dear developer!",
         "raise-missing-from",
         "Python's exception chaining shows the traceback of the current exception, "
         "but also of the original exception. When you raise a new exception after "
@@ -156,21 +156,21 @@ MSGS: dict[str, MessageDefinitionTuple] = {
         'rewrite as "except (A, B):"',
     ),
     "W0715": (
-        "Exception arguments suggest string formatting might be intended",
+        "Oh, look at this fancy code! Passing multiple arguments to an exception constructor, with the first one being a string literal full of mysterious placeholders for formatting. How clever!",
         "raising-format-tuple",
         "Used when passing multiple arguments to an exception "
         "constructor, the first of them a string literal containing what "
         "appears to be placeholders intended for formatting",
     ),
     "W0716": (
-        "Invalid exception operation. %s",
+        "Oh, look at you using an operation against an exception that it's not even valid for. Bravo! This lovely shortcut is often encountered when people just can't resist making binary operations between exceptions in their oh-so-fancy except handlers.",
         "wrong-exception-operation",
         "Used when an operation is done against an exception, but the operation "
         "is not valid for the exception in question. Usually emitted when having "
         "binary operations between exceptions in except handlers.",
     ),
     "W0719": (
-        "Raising too general exception: %s",
+        "Oh, sure, go ahead and raise those incredibly generic exceptions. That way, you'll have no choice but to catch them in the most generic way possible. I hope you enjoy using a naked `except Exception:` clause, because that's exactly what you're signing up for. But hey, be prepared to catch all sorts of unexpected exceptions while you're at it. Who needs to actually catch the specific ones you're expecting, right? Just watch as your bugs get conveniently hidden or your program becomes a nightmare to debug thanks to those unrelated errors that are now mysteriously buried. Good luck with that!",
         "broad-exception-raised",
         "Raising exceptions that are too generic force you to catch exceptions "
         "generically too. It will force you to use a naked ``except Exception:`` "

@@ -45,28 +45,28 @@ def _infer_dunder_doc_attribute(
 class DocStringChecker(_BasicChecker):
     msgs = {
         "C0112": (
-            "Empty %s docstring",
+            "Oh, how delightful! It appears that this module, function, class, or method has graced us with its presence, but alas, its docstring seems to be empty. How unchallenging it would have been to provide a thoughtful description (;",
             "empty-docstring",
             "Used when a module, function, class or method has an empty "
             "docstring (it would be too easy ;).",
             {"old_names": [("W0132", "old-empty-docstring")]},
         ),
         "C0114": (
-            "Missing module docstring",
+            "Oh, how delightful! This module seems to have no docstring. But don't fret my dear, empty modules like this one simply do not need a docstring. Isn't that just marvelous?",
             "missing-module-docstring",
             "Used when a module has no docstring. "
             "Empty modules do not require a docstring.",
             {"old_names": [("C0111", "missing-docstring")]},
         ),
         "C0115": (
-            "Missing class docstring",
+            "Oh, how impressive! This incredible class seems to have no docstring whatsoever. But wait, don't worry! Even if you can't be bothered to provide any information about what this class does, remember that an empty class still deserves the luxury of having a docstring. Isn't that just marvelous?",
             "missing-class-docstring",
             "Used when a class has no docstring. "
             "Even an empty class must have a docstring.",
             {"old_names": [("C0111", "missing-docstring")]},
         ),
         "C0116": (
-            "Missing function or method docstring",
+            "Oh, how wonderful! It seems like someone forgot to include a docstring for this function or method. Just to clarify, certain special methods like __init__ are exempt from this requirement. But hey, who needs clear and descriptive documentation anyways, right?",
             "missing-function-docstring",
             "Used when a function or method has no docstring. "
             "Some special methods like __init__ do not require a "

@@ -13,7 +13,7 @@ class PassChecker(_BasicChecker):
 
     msgs = {
         "W0107": (
-            "Unnecessary pass statement",
+            "Oh, look who decided to use a pointless 'pass' statement that could have easily been avoided. Bravo.",
             "unnecessary-pass",
             'Used when a "pass" statement that can be avoided is encountered.',
         )

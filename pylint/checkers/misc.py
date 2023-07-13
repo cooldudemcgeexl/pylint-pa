@@ -26,7 +26,7 @@ class ByIdManagedMessagesChecker(BaseRawFileChecker):
     name = "miscellaneous"
     msgs = {
         "I0023": (
-            "%s",
+            "Oh, so now we're just randomly enabling or disabling messages by id. Cool, cool.",
             "use-symbolic-message-instead",
             "Used when a message is enabled or disabled by id.",
             {"default_enabled": False},
@@ -64,7 +64,7 @@ class EncodingChecker(BaseTokenChecker, BaseRawFileChecker):
     name = "miscellaneous"
     msgs = {
         "W0511": (
-            "%s",
+            "Oh, so now we're just randomly enabling or disabling messages by id. Cool, cool.",
             "fixme",
             "Used when a warning note as FIXME or XXX is detected.",
         )

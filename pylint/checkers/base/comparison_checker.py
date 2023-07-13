@@ -33,13 +33,13 @@ class ComparisonChecker(_BasicChecker):
 
     msgs = {
         "C0121": (
-            "Comparison %s should be %s",
+            "Oh, I see someone couldn't resist comparing their precious expression to those beloved singleton values like True, False or None. How clever.",
             "singleton-comparison",
             "Used when an expression is compared to singleton "
             "values like True, False or None.",
         ),
         "C0123": (
-            "Use isinstance() rather than type() for a typecheck.",
+            "Oh, just so you know, the 'idiomatic' way to do an *explicit* typecheck in Python is to use isinstance(x, Y) instead of type(x) == Y or type(x) is Y. But hey, I guess there are some *unusual situations* where these methods can actually give different results. How fascinating, right?",
             "unidiomatic-typecheck",
             "The idiomatic way to perform an explicit typecheck in "
             "Python is to use isinstance(x, Y) rather than "
@@ -48,33 +48,33 @@ class ComparisonChecker(_BasicChecker):
             {"old_names": [("W0154", "old-unidiomatic-typecheck")]},
         ),
         "R0123": (
-            "In '%s', use '%s' when comparing constant literals not '%s' ('%s')",
+            "Oh, isn't it just lovely when you compare an object to a literal instead of what was actually expected? Because who needs accurate comparisons when you can merrily compare things to completely different literals altogether?",
             "literal-comparison",
             "Used when comparing an object to a literal, which is usually "
             "what you do not want to do, since you can compare to a different "
             "literal than what was expected altogether.",
         ),
         "R0124": (
-            "Redundant comparison - %s",
+            "Oh, how interesting! Here we have a comparison against oneself. How clever!",
             "comparison-with-itself",
             "Used when something is compared against itself.",
         ),
         "R0133": (
-            "Comparison between constants: '%s %s %s' has a constant value",
+            "Oh, just a friendly reminder: did you know that when comparing two literals, you actually get a constant as a result? Pretty cool, right? Using that constant directly instead of initializing 'True' and 'False' is not really necessary anymore. But hey, it's your choice, go ahead and complicate things if you want. Just thought you might like to know. Keep rocking!",
             "comparison-of-constants",
             "When two literals are compared with each other the result is a constant. "
             "Using the constant directly is both easier to read and more performant. "
             "Initializing 'True' and 'False' this way is not required since Python 2.3.",
         ),
         "W0143": (
-            "Comparing against a callable, did you omit the parenthesis?",
+            "Oh look, pylint has found yet another comparison with a callable. Maybe someone forgot to add those pesky parentheses, leading to some potential unwanted behavior. How interesting!",
             "comparison-with-callable",
             "This message is emitted when pylint detects that a comparison with a "
             "callable was made, which might suggest that some parenthesis were omitted, "
             "resulting in potential unwanted behaviour.",
         ),
         "W0177": (
-            "Comparison %s should be %s",
+            "Oh, I see someone couldn't resist comparing their precious expression to those beloved singleton values like True, False or None. How clever.",
             "nan-comparison",
             "Used when an expression is compared to NaN "
             "values like numpy.NaN and float('nan').",

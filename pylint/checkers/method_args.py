@@ -29,7 +29,7 @@ class MethodArgsChecker(BaseChecker):
     name = "method_args"
     msgs = {
         "W3101": (
-            "Missing timeout argument for method '%s' can cause your program to hang indefinitely",
+            "Oh, look who decided not to set a 'timeout' parameter for the method and just let the default value do all the work! Well, congratulations, now your program will happily hang indefinitely when using 'requests'. But hey, who needs efficiency and responsiveness anyway?",
             "missing-timeout",
             "Used when a method needs a 'timeout' parameter in order to avoid waiting "
             "for a long time. If no timeout is specified explicitly the default value "
@@ -37,7 +37,7 @@ class MethodArgsChecker(BaseChecker):
             "(i.e. hang indefinitely).",
         ),
         "E3102": (
-            "`%s()` got some positional-only arguments passed as keyword arguments: %s",
+            "Oh, looks like someone thought they were being clever by passing positional-only arguments as keyword arguments. But guess what? That's not how it works. So go ahead and remove those useless keywords from the function call, if you dare.",
             "positional-only-arguments-expected",
             "Emitted when positional-only arguments have been passed as keyword arguments. "
             "Remove the keywords for the affected arguments in the function call.",

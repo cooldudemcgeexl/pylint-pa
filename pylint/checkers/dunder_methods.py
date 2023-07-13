@@ -37,7 +37,7 @@ class DunderCallChecker(BaseChecker):
     priority = -1
     msgs = {
         "C2801": (
-            "Unnecessarily calls dunder method %s. %s.",
+            "Oh, congratulations on manually calling a dunder method instead of using the corresponding function/method/operator. How innovative of you!",
             "unnecessary-dunder-call",
             "Used when a dunder method is manually called instead "
             "of using the corresponding function/method/operator.",

@@ -25,7 +25,7 @@ class BadChainedComparisonChecker(BaseChecker):
     name = "bad-chained-comparison"
     msgs = {
         "W3601": (
-            "Suspicious %s-part chained comparison using semantically incompatible operators (%s)",
+            "Oh look, seems like someone got a little carried away with their comparisons here. Can't help but wonder if they really understand the meaning behind '<' and 'is'. It's quite amusing how they thought chaining them together in '0 < x is None' was a grand idea. Definitely a classic mistake, to say the least.",
             "bad-chained-comparison",
             "Used when there is a chained comparison where one expression is part "
             "of two comparisons that belong to different semantic groups "

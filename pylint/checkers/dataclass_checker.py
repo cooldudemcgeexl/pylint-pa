@@ -44,7 +44,7 @@ class DataclassChecker(BaseChecker):
     name = "dataclass"
     msgs = {
         "E3701": (
-            "Invalid usage of field(), %s",
+            "Oh, look who thinks they know how to use dataclasses.field()! Just a friendly reminder that this specifier should ONLY be used as the value of an assignment within a dataclass or within the make_dataclass() function. But hey, don't worry, I'm sure you know best.",
             "invalid-field-call",
             "The dataclasses.field() specifier should only be used as the value of "
             "an assignment within a dataclass, or within the make_dataclass() function.",

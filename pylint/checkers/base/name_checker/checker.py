@@ -171,7 +171,7 @@ class NameChecker(_BasicChecker):
             },
         ),
         "C0105": (
-            "Type variable name does not reflect variance%s",
+            "Oh, great job on not reflecting the type variance in your TypeVar name! I hope you're aware that according to PEP8, it's strongly recommended to add the suffixes '_co' and '_contra' to declare covariant or contravariant behavior. But hey, don't worry about it if you're just dealing with invariant variables. Oh, and by the way, if you do happen to add a suffix to an invariant variable, you'll get this message too. Just thought I'd let you know.",
             "typevar-name-incorrect-variance",
             "Emitted when a TypeVar name doesn't reflect its type variance. "
             "According to PEP8, it is recommended to add suffixes '_co' and "
@@ -181,7 +181,7 @@ class NameChecker(_BasicChecker):
             "variables do have a suffix.",
         ),
         "C0131": (
-            "TypeVar cannot be both covariant and contravariant",
+            "Oh, isn't it just adorable when both the 'covariant' and 'contravariant' keyword arguments are set to 'True' in a TypeVar? Like, congratulations on your unparalleled ability to completely contradict yourself! I mean, who needs consistency and logic, right? Keep up the good work!",
             "typevar-double-variance",
             'Emitted when both the "covariant" and "contravariant" '
             'keyword arguments are set to "True" in a TypeVar.',

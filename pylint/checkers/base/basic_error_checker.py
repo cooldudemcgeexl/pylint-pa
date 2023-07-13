@@ -100,39 +100,39 @@ def redefined_by_decorator(node: nodes.FunctionDef) -> bool:
 class BasicErrorChecker(_BasicChecker):
     msgs = {
         "E0100": (
-            "__init__ method is a generator",
+            "Wow, someone thought it would be a great idea to turn the oh-so-special class method __init__ into a generator by throwing a yield in its body. How ingenious!",
             "init-is-generator",
             "Used when the special class method __init__ is turned into a "
             "generator by a yield in its body.",
         ),
         "E0101": (
-            "Explicit return in __init__",
+            "Oh, look who thinks they're special! Using an explicit return value in the __init__ method, huh? How original!",
             "return-in-init",
             "Used when the special class method __init__ has an explicit "
             "return value.",
         ),
         "E0102": (
-            "%s already defined line %s",
+            "Oh, look who decided to redefine a function / class / method!",
             "function-redefined",
             "Used when a function / class / method is redefined.",
         ),
         "E0103": (
-            "%r not properly in loop",
+            "Oh, how lovely! Looks like someone forgot that the break or continue keywords are meant to be used only inside a loop. But hey, who needs rules anyway, right?",
             "not-in-loop",
             "Used when break or continue keywords are used outside a loop.",
         ),
         "E0104": (
-            "Return outside function",
+            "Oh look, another 'return' statement just casually hanging out outside a function or method. So useful and logical. It's not like it's supposed to be there or anything. Clearly someone just forgot where it actually belongs. Keep up the great work!",
             "return-outside-function",
             'Used when a "return" statement is found outside a function or method.',
         ),
         "E0105": (
-            "Yield outside function",
+            "Oh, look at this! We found a little 'yield' statement just hanging out here all by itself, outside of a proper function or method. How utterly astounding! I guess we're just throwing all the rules out the window today, aren't we? Keep up the great work, genius.",
             "yield-outside-function",
             'Used when a "yield" statement is found outside a function or method.',
         ),
         "E0106": (
-            "Return with argument inside generator",
+            "Oh look, another 'return' statement with an argument, how original! Just love it when it's found lurking outside of a generator function or method, especially when there are some 'yield' statements around. Keep up the fantastic work!",
             "return-arg-in-generator",
             'Used when a "return" statement with an argument is found '
             "outside in a generator function or method (e.g. with some "
@@ -140,24 +140,24 @@ class BasicErrorChecker(_BasicChecker):
             {"maxversion": (3, 3)},
         ),
         "E0107": (
-            "Use of the non-existent %s operator",
+            "Oh look, trying to use the C-style pre-increment or pre-decrement operator -- and ++, like we're in some other language. Hate to break it to you, but that doesn't fly in Python. Better luck next time!",
             "nonexistent-operator",
             "Used when you attempt to use the C-style pre-increment or "
             "pre-decrement operator -- and ++, which doesn't exist in Python.",
         ),
         "E0108": (
-            "Duplicate argument name %s in function definition",
+            "Oh, I'm sorry, but it seems like someone didn't quite grasp the concept that duplicate argument names in function definitions are actually considered syntax errors. How unfortunate.",
             "duplicate-argument-name",
             "Duplicate argument names in function definitions are syntax errors.",
         ),
         "E0110": (
-            "Abstract class %r with abstract methods instantiated",
+            "Oh, look who decided to go ahead and instantiate an abstract class with `abc.ABCMeta` as the metaclass, even though it has abstract methods. How interesting.",
             "abstract-class-instantiated",
             "Used when an abstract class with `abc.ABCMeta` as metaclass "
             "has abstract methods and is instantiated.",
         ),
         "W0120": (
-            "Else clause on loop without a break statement, remove the else and"
+            "It would be absolutely delightful if loops only had an else clause when they are capable of exiting early with a break statement. Otherwise, it would be much more pleasing if the statements under else were on the same scope as the loop itself. But hey, you do you. Whatever floats your boat."
             " de-indent all the code inside it",
             "useless-else-on-loop",
             "Loops should only have an else clause if they can exit early "
@@ -165,40 +165,40 @@ class BasicErrorChecker(_BasicChecker):
             "should be on the same scope as the loop itself.",
         ),
         "E0112": (
-            "More than one starred expression in assignment",
+            "Oh, great job! You managed to include not just one, but multiple starred expressions (`*x`) in your assignment. Simply amazing! But, unfortunately, this brilliant move of yours is actually a SyntaxError. Keep up the good work!",
             "too-many-star-expressions",
             "Emitted when there are more than one starred "
             "expressions (`*x`) in an assignment. This is a SyntaxError.",
         ),
         "E0113": (
-            "Starred assignment target must be in a list or tuple",
+            "Oh, how clever of you to use a star expression as a starred assignment target! Clearly, you must have thought this through very carefully.",
             "invalid-star-assignment-target",
             "Emitted when a star expression is used as a starred assignment target.",
         ),
         "E0114": (
-            "Can use starred expression only in assignment target",
+            "Oh, look who forgot to use a star expression in an assignment target. How careless!",
             "star-needs-assignment-target",
             "Emitted when a star expression is not used in an assignment target.",
         ),
         "E0115": (
-            "Name %r is nonlocal and global",
+            "Oh, look at this genius move! Declaring a name as both nonlocal and global. How cute.",
             "nonlocal-and-global",
             "Emitted when a name is both nonlocal and global.",
         ),
         "E0116": (
-            "'continue' not supported inside 'finally' clause",
+            "Just to let you know, it seems like someone mistakenly used the `continue` keyword within a finally clause, which is actually a SyntaxError. But hey, who needs proper syntax anyway, right?",
             "continue-in-finally",
             "Emitted when the `continue` keyword is found "
             "inside a finally clause, which is a SyntaxError.",
         ),
         "E0117": (
-            "nonlocal name %s found without binding",
+            "Oh, look who couldn't be bothered to give a name to their nonlocal variable in the parent scopes. How nice.",
             "nonlocal-without-binding",
             "Emitted when a nonlocal variable does not have an attached "
             "name somewhere in the parent scopes",
         ),
         "E0118": (
-            "Name %r is used prior to global declaration",
+            "Oh, how delightful! Look at you, using a name before it has even been globally declared. Now that's bound to end in some good old-fashioned error-inducing fun, especially since Python 3.6. Bravo!",
             "used-prior-global-declaration",
             "Emitted when a name is used prior a global declaration, "
             "which results in an error since Python 3.6.",

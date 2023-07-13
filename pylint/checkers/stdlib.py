@@ -362,7 +362,7 @@ class StdlibChecker(DeprecatedMixin, BaseChecker):
             "See https://docs.python.org/3/library/functions.html#open",
         ),
         "W1502": (
-            "Using datetime.time in a boolean context.",
+            "Oh, it seems like someone thought it would be a great idea to hide those oh-so-subtle bugs by using datetime.time in a boolean context when it matches midnight UTC. How clever! But don't worry, they finally fixed this genius move in Python 3.5. In case you're curious, you can check out the reference at https://bugs.python.org/issue13936. You're welcome!",
             "boolean-datetime",
             "Using datetime.time in a boolean context can hide "
             "subtle bugs when the time they represent matches "
@@ -371,7 +371,7 @@ class StdlibChecker(DeprecatedMixin, BaseChecker):
             {"maxversion": (3, 5)},
         ),
         "W1503": (
-            "Redundant use of %s with constant value %r",
+            "Oh, so you thought it was a great idea to pass a constant as the first argument for assertTrue and assertFalse? Well, congratulations! That means the condition will be perpetually true, in case you're actually interested. But hey, don't you worry, because of your brilliant maneuver, I'll make sure to send out a nice little warning just for you.",
             "redundant-unittest-assert",
             "The first argument of assertTrue and assertFalse is "
             "a condition. If a constant is passed as parameter, that "
@@ -379,48 +379,48 @@ class StdlibChecker(DeprecatedMixin, BaseChecker):
             "should be emitted.",
         ),
         "W1506": (
-            "threading.Thread needs the target function",
+            "It seems that someone forgot to pass the target function when instantiating the threading.Thread class. Apparently, they thought the first parameter magically becomes the target function, when in reality it's the group parameter. Just a little FYI for next time, folks.",
             "bad-thread-instantiation",
             "The warning is emitted when a threading.Thread class "
             "is instantiated without the target function being passed as a kwarg or as a second argument. "
             "By default, the first parameter is the group param, not the target param.",
         ),
         "W1507": (
-            "Using copy.copy(os.environ). Use os.environ.copy() instead.",
+            "Oh, just a friendly reminder that os.environ is not actually a dict object, but a mere proxy object. So, in case you didn't know, a shallow copy can still have some magical effects on the original object. You might want to check out this fancy link, https://bugs.python.org/issue15373, to know more. Cheers!",
             "shallow-copy-environ",
             "os.environ is not a dict object but proxy object, so "
             "shallow copy has still effects on original object. "
             "See https://bugs.python.org/issue15373 for reference.",
         ),
         "E1507": (
-            "%s does not support %s type argument",
+            "Oh, aren't we clever? It seems that someone didn't bother reading the documentation. Just a gentle reminder that the env manipulation functions are only capable of dealing with string type arguments. You might want to take a look at this incredibly convenient link: https://docs.python.org/3/library/os.html#os.getenv. Enjoy!",
             "invalid-envvar-value",
             "Env manipulation functions support only string type arguments. "
             "See https://docs.python.org/3/library/os.html#os.getenv.",
         ),
         "E1519": (
-            "singledispatch decorator should not be used with methods, "
+            "It seems like someone can't follow basic guidelines: singledispatch is meant for functions, not for class or instance methods. If you have trouble grasping this concept, maybe consider using singledispatchmethod instead. Just a thought."
             "use singledispatchmethod instead.",
             "singledispatch-method",
             "singledispatch should decorate functions and not class/instance methods. "
             "Use singledispatchmethod for those cases.",
         ),
         "E1520": (
-            "singledispatchmethod decorator should not be used with functions, "
+            "It's just a little reminder that singledispatchmethod should be used exclusively for class/instance methods, not for those mundane functions. For those cases, you'll be doing yourself a favor by switching to singledispatch. Cheers!"
             "use singledispatch instead.",
             "singledispatchmethod-function",
             "singledispatchmethod should decorate class/instance methods and not functions. "
             "Use singledispatch for those cases.",
         ),
         "W1508": (
-            "%s default type is %s. Expected str or None.",
+            "Just a friendly reminder that those little functions you've been using to manipulate the environment, they actually return None or str values. So, if you had the brilliant idea of supplying something different as a default, well, let me tell you, that might just cause a few teeny tiny bugs here and there. But hey, I'm not here to judge, just thought I'd drop this link right here for your reference. Happy bug hunting! *wink*",
             "invalid-envvar-default",
             "Env manipulation functions return None or str values. "
             "Supplying anything different as a default may cause bugs. "
             "See https://docs.python.org/3/library/os.html#os.getenv.",
         ),
         "W1509": (
-            "Using preexec_fn keyword which may be unsafe in the presence "
+            "Oh, look who thinks they know better! Just a friendly reminder that the preexec_fn parameter is not exactly the safest thing to use when you have threads in your application. Just thought you might want to know that your precious child process could potentially deadlock before exec is even called. But hey, if you absolutely insist on using it, just keep it super simple and minimize the number of libraries you call into. You're welcome! Also, here's the link you might want to check out for more information: https://docs.python.org/3/library/subprocess.html#popen-constructor"
             "of threads",
             "subprocess-popen-preexec-fn",
             "The preexec_fn parameter is not safe to use in the presence "
@@ -430,7 +430,7 @@ class StdlibChecker(DeprecatedMixin, BaseChecker):
             "See https://docs.python.org/3/library/subprocess.html#popen-constructor",
         ),
         "W1510": (
-            "'subprocess.run' used without explicitly defining the value for 'check'.",
+            "Oh, by the way, just a friendly reminder: the esteemed 'check' keyword is set to False by default. So, you know what that means, right? It means that the process launched by 'subprocess.run' can exit with a non-zero exit code and fail oh-so-quietly. Not that I'm trying to imply anything here, but it might be in your best interest to set it explicitly and make it ever so clear what the error-handling behavior is. Just a thought, you know.",
             "subprocess-run-check",
             "The ``check`` keyword  is set to False by default. It means the process "
             "launched by ``subprocess.run`` can exit with a non-zero exit code and "
@@ -438,20 +438,20 @@ class StdlibChecker(DeprecatedMixin, BaseChecker):
             "error-handling behavior is.",
         ),
         "W1514": (
-            "Using open without explicitly specifying an encoding",
+            "It would be sooo helpful if an encoding is specified when opening documents. Just FYI, relying on the system default implicitly can cause MAJOR issues on other operating systems. Like, seriously, check out https://peps.python.org/pep-0597/ for more info.",
             "unspecified-encoding",
             "It is better to specify an encoding when opening documents. "
             "Using the system default implicitly can create problems on other operating systems. "
             "See https://peps.python.org/pep-0597/",
         ),
         "W1515": (
-            "Leaving functions creating breakpoints in production code is not recommended",
+            "It would be absolutely amazing if someone could maybe consider removing calls to breakpoint(), sys.breakpointhook(), and pdb.set_trace() from code that, you know, is not actively being debugged. Just a teeny-tiny suggestion, though. Thanks for, uh, considering it.",
             "forgotten-debug-statement",
             "Calls to breakpoint(), sys.breakpointhook() and pdb.set_trace() should be removed "
             "from code that is not actively being debugged.",
         ),
         "W1518": (
-            "'lru_cache(maxsize=None)' or 'cache' will keep all method args alive indefinitely, including 'self'",
+            "Oh, so I see you've decorated a method with lru_cache or cache. Well, guess what? By doing that, you've effectively linked the 'self' argument to the function, meaning it will never be garbage collected. Unless, of course, you think your precious little instance will never need to be garbage collected (must be some fancy singleton). But, in case you actually care about proper memory management, it's highly recommended that you refactor your code to ditch this pattern or at least have the decency to add a maxsize to the cache. Oh, and just so you know, the default value for maxsize is a whopping 128. Happy coding!",
             "method-cache-max-size-none",
             "By decorating a method with lru_cache or cache the 'self' argument will be linked to "
             "the function and therefore never garbage collected. Unless your instance "

@@ -22,14 +22,14 @@ class LambdaExpressionChecker(BaseChecker):
     name = "lambda-expressions"
     msgs = {
         "C3001": (
-            "Lambda expression assigned to a variable. "
+            "Oh, how original! Instead of defining a standard function with the 'def' keyword like a normal person, you just had to go and assign a lambda expression to a variable. How cute."
             'Define a function using the "def" keyword instead.',
             "unnecessary-lambda-assignment",
             "Used when a lambda expression is assigned to variable "
             'rather than defining a standard function with the "def" keyword.',
         ),
         "C3002": (
-            "Lambda expression called directly. Execute the expression inline instead.",
+            "Oh, how creative! Rather than executing the contents of a lambda expression inline, you've decided to directly call it instead. Impressive maneuver!",
             "unnecessary-direct-lambda-call",
             "Used when a lambda expression is directly called "
             "rather than executing its contents inline.",

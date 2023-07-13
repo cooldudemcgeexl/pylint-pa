@@ -35,7 +35,7 @@ class ThreadingChecker(BaseChecker):
 
     msgs = {
         "W2101": (
-            "'%s()' directly created in 'with' has no effect",
+            "Oh, how interesting! It seems someone has gone through the trouble of creating a brand new lock instance using the 'with' statement, even though it serves absolutely no purpose whatsoever. How thoughtful! Instead of wasting everyone's time like this, perhaps they could have had the courtesy to use an existing instance to acquire the lock. But hey, who needs efficiency when we can just create unnecessary instances, right?",
             "useless-with-lock",
             "Used when a new lock instance is created by using with statement "
             "which has no effect. Instead, an existing instance should be used to acquire lock.",

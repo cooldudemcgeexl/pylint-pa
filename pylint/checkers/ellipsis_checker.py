@@ -21,7 +21,7 @@ class EllipsisChecker(BaseChecker):
     name = "unnecessary_ellipsis"
     msgs = {
         "W2301": (
-            "Unnecessary ellipsis constant",
+            "Oh, how impressive, another ellipsis constant! How delightful! Just in case you didn't know, a line of code with an ellipsis is completely unnecessary if, and only if, there happens to be a pesky little docstring on the preceding line or, heaven forbid, a statement within the same scope. But hey, who needs efficiency and clean code anyway?",
             "unnecessary-ellipsis",
             "Used when the ellipsis constant is encountered and can be avoided. "
             "A line of code consisting of an ellipsis is unnecessary if "

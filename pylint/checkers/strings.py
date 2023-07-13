@@ -68,18 +68,18 @@ MSGS: dict[
     str, MessageDefinitionTuple
 ] = {  # pylint: disable=consider-using-namedtuple-or-dataclass
     "E1300": (
-        "Unsupported format character %r (%#02x) at index %d",
+        "Oh, congratulations! You've managed to use an unsupported format character in your format string. How innovative of you!",
         "bad-format-character",
         "Used when an unsupported format character is used in a format string.",
     ),
     "E1301": (
-        "Format string ends in middle of conversion specifier",
+        "Oh, how lovely! Looks like someone decided to cut a format string short before completing a conversion specifier. How thoughtful of them!",
         "truncated-format-string",
         "Used when a format string terminates before the end of a "
         "conversion specifier.",
     ),
     "E1302": (
-        "Mixing named and unnamed conversion specifiers in format string",
+        "Dear developer,\nIt appears that you have decided to use both named (e.g. '%(foo)d') and unnamed (e.g. '%d') conversion specifiers in your format string. Bravo! This is a fabulous choice. Additionally, I see you have incorporated the * symbol for the minimum field width and/or precision in your named conversion specifier. How creative! Keep up the excellent work!",
         "mixed-format-string",
         "Used when a format string contains both named (e.g. '%(foo)d') "
         "and unnamed (e.g. '%d') conversion specifiers.  This is also "
@@ -87,74 +87,74 @@ MSGS: dict[
         "minimum field width and/or precision.",
     ),
     "E1303": (
-        "Expected mapping for format string, not %s",
+        "Oh, how nice of you to use a format string with named conversion specifiers even though the argument you provided is not a mapping. That's just brilliant.",
         "format-needs-mapping",
         "Used when a format string that uses named conversion specifiers "
         "is used with an argument that is not a mapping.",
     ),
     "W1300": (
-        "Format string dictionary key should be a string, not %s",
+        "Oh, how lovely! It seems that we've stumbled upon a little issue here. It appears that someone has used a format string that includes named conversion specifiers, but made the unfortunate mistake of using a dictionary with keys that aren't all strings. Quite the oversight, wouldn't you say?",
         "bad-format-string-key",
         "Used when a format string that uses named conversion specifiers "
         "is used with a dictionary whose keys are not all strings.",
     ),
     "W1301": (
-        "Unused key %r in format string dictionary",
+        "Oh, I see we have a format string that just can't handle all the unnecessary keys in the dictionary. How unfortunate.",
         "unused-format-string-key",
         "Used when a format string that uses named conversion specifiers "
         "is used with a dictionary that contains keys not required by the "
         "format string.",
     ),
     "E1304": (
-        "Missing key %r in format string dictionary",
+        "Oh, look who decided to use a format string with named conversion specifiers without bothering to check if the dictionary actually has all the keys required by said format string. How irresponsible of you!",
         "missing-format-string-key",
         "Used when a format string that uses named conversion specifiers "
         "is used with a dictionary that doesn't contain all the keys "
         "required by the format string.",
     ),
     "E1305": (
-        "Too many arguments for format string",
+        "Oh, do tell, seems like someone got a bit carried away with their arguments for that format string with unnamed conversion specifiers. Too many, really? How fascinating!",
         "too-many-format-args",
         "Used when a format string that uses unnamed conversion "
         "specifiers is given too many arguments.",
     ),
     "E1306": (
-        "Not enough arguments for format string",
+        "Oh, so we think we're too good to provide enough arguments for those unnamed conversion specifiers in our precious format string?",
         "too-few-format-args",
         "Used when a format string that uses unnamed conversion "
         "specifiers is given too few arguments",
     ),
     "E1307": (
-        "Argument %r does not match format type %r",
+        "How convenient that the type required by the format string is apparently not suitable for the actual argument type. Such a delightful oversight!",
         "bad-string-format-type",
         "Used when a type required by format string "
         "is not suitable for actual argument type",
     ),
     "E1310": (
-        "Suspicious argument in %s.%s call",
+        "Seems like someone got a little too carried away with duplicate characters in their argument for a str.{l,r,}strip call. Time to clean up the mess!",
         "bad-str-strip-call",
         "The argument to a str.{l,r,}strip call contains a duplicate character,",
     ),
     "W1302": (
-        "Invalid format string",
+        "Oh, so I see we have an invalid PEP 3101 format string here. How interesting!",
         "bad-format-string",
         "Used when a PEP 3101 format string is invalid.",
     ),
     "W1303": (
-        "Missing keyword argument %r for format string",
+        "Oh, looks like we have a PEP 3101 format string here that is missing one or more of its precious required keywords! How careless!",
         "missing-format-argument-key",
         "Used when a PEP 3101 format string that uses named fields "
         "doesn't receive one or more required keywords.",
     ),
     "W1304": (
-        "Unused format argument %r",
+        "Well, congratulations! Another instance of someone using a PEP 3101 format string with a named field, even though the argument isn't even required by the format string. Excellent job on complicating things unnecessarily!",
         "unused-format-string-argument",
         "Used when a PEP 3101 format string that uses named "
         "fields is used with an argument that "
         "is not required by the format string.",
     ),
     "W1305": (
-        "Format string contains both automatic field numbering "
+        "Oh, how clever! Mixing automatic field numbering (so unpredictable!) with manual field specification (just to confuse everyone!) in a PEP 3101 format string. How absolutely brilliant!"
         "and manual field specification",
         "format-combined-specification",
         "Used when a PEP 3101 format string contains both automatic "
@@ -162,33 +162,33 @@ MSGS: dict[
         "specification (e.g. '{0}').",
     ),
     "W1306": (
-        "Missing format attribute %r in format specifier %r",
+        "Oh, how lovely! It seems someone thought it would be simply fantastic to use an attribute specifier ({0.length}) in their PEP 3101 format string. Unfortunately, the argument provided for formatting falls short in possessing said attribute. How marvelous!",
         "missing-format-attribute",
         "Used when a PEP 3101 format string uses an "
         "attribute specifier ({0.length}), but the argument "
         "passed for formatting doesn't have that attribute.",
     ),
     "W1307": (
-        "Using invalid lookup key %r in format specifier %r",
+        "Oh, so the PEP 3101 format string decides to use a lookup specifier ({a[1]}) huh? Well, guess what? The argument provided for formatting doesn't even bother to include or have that key as an attribute. Great job!",
         "invalid-format-index",
         "Used when a PEP 3101 format string uses a lookup specifier "
         "({a[1]}), but the argument passed for formatting "
         "doesn't contain or doesn't have that key as an attribute.",
     ),
     "W1308": (
-        "Duplicate string formatting argument %r, consider passing as named argument",
+        "Oh, look, another case of someone repeating arguments instead of using named string arguments. How original. Guess some people just can't be bothered to follow best practices. But hey, I guess it's too much to ask for a little efficiency and clarity in code.",
         "duplicate-string-formatting-argument",
         "Used when we detect that a string formatting is "
         "repeating an argument instead of using named string arguments",
     ),
     "W1309": (
-        "Using an f-string that does not have any interpolated variables",
+        "Oh, look at this fancy f-string without any interpolation variables. Is it just a normal string or are we dealing with a bug in the code? I guess we'll never know...",
         "f-string-without-interpolation",
         "Used when we detect an f-string that does not use any interpolation variables, "
         "in which case it can be either a normal string or a bug in the code.",
     ),
     "W1310": (
-        "Using formatting for a string that does not have any interpolated variables",
+        "Oh, how fascinating! We've stumbled upon a string that lacks any interpolation variables. It could be one of two things: a simple, unformatted string or perhaps, just maybe, a delightful bug in the code. Isn't that just riveting?",
         "format-string-without-interpolation",
         "Used when we detect a string that does not have any interpolation variables, "
         "in which case it can be either a normal string without formatting or a bug in the code.",
@@ -641,20 +641,20 @@ class StringConstantChecker(BaseTokenChecker, BaseRawFileChecker):
     name = "string"
     msgs = {
         "W1401": (
-            "Anomalous backslash in string: '%s'. "
+            "Oh, look at you! Using a backslash in a literal string without even bothering to make it an escape. How... interesting."
             "String constant might be missing an r prefix.",
             "anomalous-backslash-in-string",
             "Used when a backslash is in a literal string but not as an escape.",
         ),
         "W1402": (
-            "Anomalous Unicode escape in byte string: '%s'. "
+            "Oh, look who decided to use an escape like \\u in a byte string where it clearly has absolutely no effect. How clever."
             "String constant might be missing an r or u prefix.",
             "anomalous-unicode-escape-in-string",
             "Used when an escape like \\u is encountered in a byte "
             "string where it has no effect.",
         ),
         "W1404": (
-            "Implicit string concatenation found in %s",
+            "Oh, look at that! The kind-hearted developer forgot to add a pesky little comma in the literal iterable definition. You know, because string literals are just miraculously supposed to concatenate themselves. But hey, who needs proper syntax anyway, right?",
             "implicit-str-concat",
             "String literals are implicitly concatenated in a "
             "literal iterable definition : "
@@ -662,13 +662,13 @@ class StringConstantChecker(BaseTokenChecker, BaseRawFileChecker):
             {"old_names": [("W1403", "implicit-str-concat-in-sequence")]},
         ),
         "W1405": (
-            "Quote delimiter %s is inconsistent with the rest of the file",
+            "It's absolutely adorable how quote delimiters are used inconsistently throughout this module. Well, unless of course you're just trying to avoid the unnecessary burden of escaping characters. But who needs consistency anyway, am I right?",
             "inconsistent-quotes",
             "Quote delimiters are not used consistently throughout a module "
             "(with allowances made for avoiding unnecessary escaping).",
         ),
         "W1406": (
-            "The u prefix for strings is no longer necessary in Python >=3.0",
+            "Oh, how lovely! We have detected a string with the obsolete u prefix. You see, in the ancient times of Python 2, people had to use these prefixes to say their string was Unicode. It's just too bad that they didn't get the memo that Python 3.0 strings are already Unicode by default. But hey, who needs to keep up with the times, right?",
             "redundant-u-string-prefix",
             "Used when we detect a string with a u prefix. These prefixes were necessary "
             "in Python 2 to indicate a string was Unicode, but since Python 3.0 strings "

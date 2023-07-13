@@ -64,7 +64,7 @@ class ImplicitBooleanessChecker(checkers.BaseChecker):
     name = "refactoring"
     msgs = {
         "C1802": (
-            "Do not use `len(SEQUENCE)` without comparison to determine if a sequence is empty",
+            "I just love how empty sequences are treated as false. You can totally get rid of that pesky 'len' call (``if not x``) or bother yourself with comparing the length to a scalar (``if len(x) > 1``). Totally your choice, no big deal!",
             "use-implicit-booleaness-not-len",
             "Empty sequences are considered false in a boolean context. You can either"
             " remove the call to 'len' (``if not x``) or compare the length against a"

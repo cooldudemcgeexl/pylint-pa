@@ -61,7 +61,7 @@ class SpecialMethodsChecker(BaseChecker):
     name = "classes"
     msgs = {
         "E0301": (
-            "__iter__ returns non-iterator",
+            "Well isn't it just fantastic when an __iter__ method decides to return something that isn't even iterable? I mean, who needs a `__next__` method anyways? It's not like that's a fundamental requirement or anything.",
             "non-iterator-returned",
             "Used when an __iter__ method returns something which is not an "
             f"iterable (i.e. has no `{NEXT_METHOD}` method)",
@@ -73,7 +73,7 @@ class SpecialMethodsChecker(BaseChecker):
             },
         ),
         "E0302": (
-            "The special method %r expects %s param(s), %d %s given",
+            "Oh, congratulations! You've managed to define a special method with an invalid number of parameters. Who needs things to actually work, right? It's not like following the rules and having the correct number of parameters would be important or anything. Keep up the great work!",
             "unexpected-special-method-signature",
             "Emitted when a special method was defined with an "
             "invalid number of parameters. If it has too few or "
@@ -81,61 +81,61 @@ class SpecialMethodsChecker(BaseChecker):
             {"old_names": [("E0235", "bad-context-manager")]},
         ),
         "E0303": (
-            "__len__ does not return non-negative integer",
+            "'Wow, looks like someone forgot that a __len__ method should return a non-negative integer. Keep up the great work!'",
             "invalid-length-returned",
             "Used when a __len__ method returns something which is not a "
             "non-negative integer",
         ),
         "E0304": (
-            "__bool__ does not return bool",
+            "It's just so impressive how this __bool__ method decides to return something that clearly isn't a bool. Like, why follow the rules when you can just do whatever you want, right?",
             "invalid-bool-returned",
             "Used when a __bool__ method returns something which is not a bool",
         ),
         "E0305": (
-            "__index__ does not return int",
+            "Seems like someone's __index__ method decided to return something that is clearly not an integer. Very impressive!",
             "invalid-index-returned",
             "Used when an __index__ method returns something which is not "
             "an integer",
         ),
         "E0306": (
-            "__repr__ does not return str",
+            "Oh, apparently we've got some creative genius over here! The __repr__ method just couldn't resist showing off by returning something that isn't even a string. Way to keep us on our toes!",
             "invalid-repr-returned",
             "Used when a __repr__ method returns something which is not a string",
         ),
         "E0307": (
-            "__str__ does not return str",
+            "Oh, how interesting! It appears that the __str__ method has generously decided to return something that is not a string. How marvelous!",
             "invalid-str-returned",
             "Used when a __str__ method returns something which is not a string",
         ),
         "E0308": (
-            "__bytes__ does not return bytes",
+            "Well, look who decided to return something that's not bytes in their __bytes__ method. How creative.",
             "invalid-bytes-returned",
             "Used when a __bytes__ method returns something which is not bytes",
         ),
         "E0309": (
-            "__hash__ does not return int",
+            "Well, isn't it just fabulous when the oh-so-clever __hash__ method decides to return something other than an integer? Absolutely brilliant!",
             "invalid-hash-returned",
             "Used when a __hash__ method returns something which is not an integer",
         ),
         "E0310": (
-            "__length_hint__ does not return non-negative integer",
+            "Oh, look who decided to return something that's not a non-negative integer in their __length_hint__ method. How charming.",
             "invalid-length-hint-returned",
             "Used when a __length_hint__ method returns something which is not a "
             "non-negative integer",
         ),
         "E0311": (
-            "__format__ does not return str",
+            "Oh, apparently someone decided it was a brilliant idea for the __format__ method to return something other than a string. Well, that's great. Just great.",
             "invalid-format-returned",
             "Used when a __format__ method returns something which is not a string",
         ),
         "E0312": (
-            "__getnewargs__ does not return a tuple",
+            "Oh, how insightful! It seems that someone's __getnewargs__ method has returned something other than a tuple. How unexpected and utterly bewildering!",
             "invalid-getnewargs-returned",
             "Used when a __getnewargs__ method returns something which is not "
             "a tuple",
         ),
         "E0313": (
-            "__getnewargs_ex__ does not return a tuple containing (tuple, dict)",
+            "Oh, how interesting! The __getnewargs_ex__ method has decided to return something that does not conform to the expected format of tuple(tuple, dict). Very clever, indeed.",
             "invalid-getnewargs-ex-returned",
             "Used when a __getnewargs_ex__ method returns something which is not "
             "of the form tuple(tuple, dict)",

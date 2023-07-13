@@ -243,13 +243,13 @@ def _missing_member_hint(
 
 MSGS: dict[str, MessageDefinitionTuple] = {
     "E1101": (
-        "%s %r has no %r member%s",
+        "Oh, so you thought this variable had a nonexistent member? That's cute.",
         "no-member",
         "Used when a variable is accessed for a nonexistent member.",
         {"old_names": [("E1103", "maybe-no-member")]},
     ),
     "I1101": (
-        "%s %r has no %r member%s, but source is unavailable. Consider "
+        "Oh, so you thought this variable had a nonexistent member? That's cute., but source is unavailable. Consider "
         "adding this module to extension-pkg-allow-list if you want "
         "to perform analysis based on run-time introspection of living objects.",
         "c-extension-no-member",
@@ -258,42 +258,42 @@ MSGS: dict[str, MessageDefinitionTuple] = {
         "but it may be performed by introspecting living objects in run-time.",
     ),
     "E1102": (
-        "%s is not callable",
+        "Oh, sorry for assuming that you knew what you were doing, but apparently you're trying to call something that can't be called. So, have fun with your non-callable object!",
         "not-callable",
         "Used when an object being called has been inferred to a non "
         "callable object.",
     ),
     "E1111": (
-        "Assigning result of a function call, where the function has no return",
+        "Oh, how delightful! An assignment has been done on a function call, but alas, the inferred function seems to have forgotten the art of returning objects.",
         "assignment-from-no-return",
         "Used when an assignment is done on a function call but the "
         "inferred function doesn't return anything.",
     ),
     "E1120": (
-        "No value for argument %s in %s call",
+        "Oh, what a surprise! Looks like someone forgot to provide all the necessary arguments in their function call. How impressive!",
         "no-value-for-parameter",
         "Used when a function call passes too few arguments.",
     ),
     "E1121": (
-        "Too many positional arguments for %s call",
+        "Oh look, someone can't seem to count or follow simple instructions. Too many pointless positional arguments in a function call. How surprising!",
         "too-many-function-args",
         "Used when a function call passes too many positional arguments.",
     ),
     "E1123": (
-        "Unexpected keyword argument %r in %s call",
+        "Oh, how lovely! It seems that someone has decided to pass a keyword argument that doesn't quite match any of the parameter names in the function. Such a wonderfully creative way to cause confusion. Bravo!",
         "unexpected-keyword-arg",
         "Used when a function call passes a keyword argument that "
         "doesn't correspond to one of the function's parameter names.",
     ),
     "E1124": (
-        "Argument %r passed by position and keyword in %s call",
+        "Oh, how wonderful! It seems that someone thought it was a brilliant idea to assign multiple values to a poor little function parameter. You know, one value from a measly positional argument and another from a pretentious keyword argument. How creative! Absolutely splendid!",
         "redundant-keyword-arg",
         "Used when a function call would result in assigning multiple "
         "values to a function parameter, one value from a positional "
         "argument and one from a keyword argument.",
     ),
     "E1125": (
-        "Missing mandatory keyword argument %r in %s call",
+        "Oh look, someone forgot to include a mandatory keyword-only argument in their function call. How unexpected.",
         "missing-kwoa",
         (
             "Used when a function call does not pass a mandatory"
@@ -301,128 +301,128 @@ MSGS: dict[str, MessageDefinitionTuple] = {
         ),
     ),
     "E1126": (
-        "Sequence index is not an int, slice, or instance with __index__",
+        "Apparently someone thought it was a brilliant idea to index a sequence type with an INVALID type. Just so you know, the only ACCEPTABLE types for indexing are ints, slices, and objects with an __index__ method. But, hey, feel free to keep defying logic and common sense.",
         "invalid-sequence-index",
         "Used when a sequence type is indexed with an invalid type. "
         "Valid types are ints, slices, and objects with an __index__ "
         "method.",
     ),
     "E1127": (
-        "Slice index is not an int, None, or instance with __index__",
+        "Well, well, well. Looks like someone got a little carried away with their slice index. Newsflash, it should be an integer, None, or an object with an __index__ method. But feel free to keep ignoring the rules if you really don't mind wasting your time. Just a friendly suggestion, you know?",
         "invalid-slice-index",
         "Used when a slice index is not an integer, None, or an object "
         "with an __index__ method.",
     ),
     "E1128": (
-        "Assigning result of a function call, where the function returns None",
+        "Well, it seems that someone has decided to assign a variable on a function call, even though the inferred function couldn't be bothered to return anything other than None. But hey, who needs a useful return value anyway, right? Just trying to keep things interesting, I guess.",
         "assignment-from-none",
         "Used when an assignment is done on a function call but the "
         "inferred function returns nothing but None.",
         {"old_names": [("W1111", "old-assignment-from-none")]},
     ),
     "E1129": (
-        "Context manager '%s' doesn't implement __enter__ and __exit__.",
+        "Oh, how delightful! It seems that someone forgot to implement the context manager protocol (__enter__/__exit__) for this instance used in a with statement. How positively wonderful!",
         "not-context-manager",
         "Used when an instance in a with statement doesn't implement "
         "the context manager protocol(__enter__/__exit__).",
     ),
     "E1130": (
-        "%s",
+        "Well, well, well, seems like someone didn't bother checking if the object they were using could handle a unary operand. I guess they thought they were just *so* clever, trying to perform an operation that is clearly not supported. Nice work, really.",
         "invalid-unary-operand-type",
         "Emitted when a unary operand is used on an object which does not "
         "support this type of operation.",
     ),
     "E1131": (
-        "%s",
+        "Well, well, well, seems like someone didn't bother checking if the object they were using could handle a unary operand. I guess they thought they were just *so* clever, trying to perform an operation that is clearly not supported. Nice work, really.",
         "unsupported-binary-operation",
         "Emitted when a binary arithmetic operation between two "
         "operands is not supported.",
     ),
     "E1132": (
-        "Got multiple values for keyword argument %r in function call",
+        "Oh, look at that! We've got ourselves a situation here where someone just couldn't resist themselves and decided to pass multiple values for a keyword in a function call. Bravo! A round of applause for this amazing display of complete disregard for basic programming principles. Well done!",
         "repeated-keyword",
         "Emitted when a function call got multiple values for a keyword.",
     ),
     "E1135": (
-        "Value '%s' doesn't support membership test",
+        "Value 'Well, well, well, seems like someone didn't bother checking if the object they were using could handle a unary operand. I guess they thought they were just *so* clever, trying to perform an operation that is clearly not supported. Nice work, really.' doesn't support membership test",
         "unsupported-membership-test",
         "Emitted when an instance in membership test expression doesn't "
         "implement membership protocol (__contains__/__iter__/__getitem__).",
     ),
     "E1136": (
-        "Value '%s' is unsubscriptable",
+        "Value 'Well, well, well, seems like someone didn't bother checking if the object they were using could handle a unary operand. I guess they thought they were just *so* clever, trying to perform an operation that is clearly not supported. Nice work, really.' is unsubscriptable",
         "unsubscriptable-object",
         "Emitted when a subscripted value doesn't support subscription "
         "(i.e. doesn't define __getitem__ method or __class_getitem__ for a class).",
     ),
     "E1137": (
-        "%r does not support item assignment",
+        "Just a friendly reminder: certain objects seem to be incapable of handling item assignment. You know, those objects that forget to define the __setitem__ method. It's not a big deal, really. Just thought I'd point it out. Have a splendid day!",
         "unsupported-assignment-operation",
         "Emitted when an object does not support item assignment "
         "(i.e. doesn't define __setitem__ method).",
     ),
     "E1138": (
-        "%r does not support item deletion",
+        "Oh, look at you, thinking you're special! This object here has no clue how to delete items, I mean, who needs that anyway? Clearly didn't bother defining the __delitem__ method. How lazy can you get?",
         "unsupported-delete-operation",
         "Emitted when an object does not support item deletion "
         "(i.e. doesn't define __delitem__ method).",
     ),
     "E1139": (
-        "Invalid metaclass %r used",
+        "Oh, congratulations on using something that might be invalid as a metaclass! We just love detecting when a class decides to go against the norm and use such questionable choices.",
         "invalid-metaclass",
         "Emitted whenever we can detect that a class is using, "
         "as a metaclass, something which might be invalid for using as "
         "a metaclass.",
     ),
     "E1141": (
-        "Unpacking a dictionary in iteration without calling .items()",
+        "Just a helpful reminder that you might want to consider calling .items() if you ever feel like iterating through a dict. It's just a small suggestion that could make your life a little bit easier, but hey, it's totally up to you.",
         "dict-iter-missing-items",
         "Emitted when trying to iterate through a dict without calling .items()",
     ),
     "E1142": (
-        "'await' should be used within an async function",
+        "Well, it seems someone couldn't resist using await outside of an async function. Just a friendly reminder, that's not how it's supposed to work. Keep that in mind next time.",
         "await-outside-async",
         "Emitted when await is used outside an async function.",
     ),
     "E1143": (
-        "'%s' is unhashable and can't be used as a %s in a %s",
+        "'Well, well, well, seems like someone didn't bother checking if the object they were using could handle a unary operand. I guess they thought they were just *so* clever, trying to perform an operation that is clearly not supported. Nice work, really.' is unhashable and can't be used as a Well, well, well, seems like someone didn't bother checking if the object they were using could handle a unary operand. I guess they thought they were just *so* clever, trying to perform an operation that is clearly not supported. Nice work, really. in a Well, well, well, seems like someone didn't bother checking if the object they were using could handle a unary operand. I guess they thought they were just *so* clever, trying to perform an operation that is clearly not supported. Nice work, really.",
         "unhashable-member",
         "Emitted when a dict key or set member is not hashable "
         "(i.e. doesn't define __hash__ method).",
         {"old_names": [("E1140", "unhashable-dict-key")]},
     ),
     "E1144": (
-        "Slice step cannot be 0",
+        "Well, well, well. It seems someone forgot to implement a custom __getitem__ method. And not to mention, they also decided to use a slice step of 0. Bravo! Just brilliant.",
         "invalid-slice-step",
         "Used when a slice step is 0 and the object doesn't implement "
         "a custom __getitem__ method.",
     ),
     "W1113": (
-        "Keyword argument before variable positional arguments list "
-        "in the definition of %s function",
+        "Oh, look who thinks they're so clever! If you dare to define a keyword argument before variable positional arguments, you might just find yourself with the oh-so-annoying dilemma of having multiple values passed for that parameter. All because you thought you were smart enough to call the method with keyword arguments. Good luck dealing with that mess!"
+        "in the definition of Well, well, well, seems like someone didn't bother checking if the object they were using could handle a unary operand. I guess they thought they were just *so* clever, trying to perform an operation that is clearly not supported. Nice work, really. function",
         "keyword-arg-before-vararg",
         "When defining a keyword argument before variable positional arguments, one can "
         "end up in having multiple values passed for the aforementioned parameter in "
         "case the method is called with keyword arguments.",
     ),
     "W1114": (
-        "Positional arguments appear to be out of order",
+        "Oh, how delightful! The caller's argument names perfectly match the parameter names in the function signature, but, alas, they've chosen to ruin it all by not putting them in the correct order. Lovely!",
         "arguments-out-of-order",
         "Emitted  when the caller's argument names fully match the parameter "
         "names in the function signature but do not have the same order.",
     ),
     "W1115": (
-        "Non-string value assigned to __name__",
+        "Oh, look who decided to assign a non-string value to __name__. How interesting.",
         "non-str-assignment-to-dunder-name",
         "Emitted when a non-string value is assigned to __name__",
     ),
     "W1116": (
-        "Second argument of isinstance is not a type",
+        "Oh, look who doesn't know how to use isinstance properly. The second argument is supposed to be a type, not whatever nonsense you're passing in. Maybe try reading the documentation next time? Just a thought.",
         "isinstance-second-argument-not-valid-type",
         "Emitted when the second argument of an isinstance call is not a type.",
     ),
     "W1117": (
-        "%r will be included in %r since a positional-only parameter with this name already exists",
+        "Oh, look who's trying to be clever with their function calls! A keyword argument that just happens to have the same name as a positional-only parameter? Bravo! And don't even get me started on the fact that this function also has a keyword variadic parameter dict. Clearly, someone's trying to show off here.",
         "kwarg-superseded-by-positional-arg",
         "Emitted when a function is called with a keyword argument that has the "
         "same name as a positional-only parameter and the function contains a "
@@ -2240,13 +2240,13 @@ class IterableChecker(BaseChecker):
 
     msgs = {
         "E1133": (
-            "Non-iterable value %s is used in an iterating context",
+            "Non-iterable value Well, well, well, seems like someone didn't bother checking if the object they were using could handle a unary operand. I guess they thought they were just *so* clever, trying to perform an operation that is clearly not supported. Nice work, really. is used in an iterating context",
             "not-an-iterable",
             "Used when a non-iterable value is used in place where "
             "iterable is expected",
         ),
         "E1134": (
-            "Non-mapping value %s is used in a mapping context",
+            "Non-mapping value Well, well, well, seems like someone didn't bother checking if the object they were using could handle a unary operand. I guess they thought they were just *so* clever, trying to perform an operation that is clearly not supported. Nice work, really. is used in a mapping context",
             "not-a-mapping",
             "Used when a non-mapping value is used in place where "
             "mapping is expected",
