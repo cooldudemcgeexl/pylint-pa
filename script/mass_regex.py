@@ -59,5 +59,6 @@ if __name__ == "__main__":
         for code, message in old_messages.items():
             category_str = get_category(code)
             new_message = messages_dict[category_str][code]['message']
+            new_message = new_message.replace('"',"'")
             file_text = file_text.replace(message,new_message)
-        print(file_text)
+        file.write_text(file_text,encoding='utf-8')
